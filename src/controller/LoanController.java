@@ -17,12 +17,13 @@ public class LoanController {
 
     // gets called after an LP is returned
     public void deleteLoan(Loan loan){
-        deleteLoan(loan);
+        loanContainer.deleteLoan(loan);
     }
 
+    // TODO garbage?
     // for populating the containers
-    public void createLoan(Loan loan) {
-        loanContainer.createLoan(loan);
-    }
+//    public void createLoan(Loan loan) {
+//        loanContainer.createLoan(loan);
+//    }
 
 }

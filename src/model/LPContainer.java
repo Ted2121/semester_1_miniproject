@@ -19,20 +19,13 @@ public class LPContainer {
     }
 
     // part of CRUD LP
-    public void addLP(LP lp)
-    {
+    public void addLP(LP lp){
         lps.add(lp);
-       // System.out.println(lps);
-
     }
 
-    public void toString(LP lp){
-
-    }
-
-    public void getInfo(ArrayList lps){
-
-lps.forEach(lp -> System.out.println(lp));
+    public void getInfo(){
+        // used lambda to print each LP
+        lps.forEach(lp -> System.out.println(lp));
 
     }
 

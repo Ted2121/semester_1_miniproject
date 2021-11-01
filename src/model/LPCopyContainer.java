@@ -24,4 +24,8 @@ public class LPCopyContainer {
         lpCopies.add(lpCopy);
     }
 
+    public void getInfo(){
+        // used lambda to print each LPCopy
+        lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
+    }
 }

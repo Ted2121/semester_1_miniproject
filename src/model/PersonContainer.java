@@ -23,4 +23,13 @@ public class PersonContainer {
     public void addPerson(Person person){
         persons.add(person);
     }
+
+    public void deletePerson(Person person) {
+        persons.remove(person);
+    }
+
+    public void getInfo(){
+        // used lambda to print each LPCopy
+        persons.forEach(person -> System.out.println(person));
+    }
 }

@@ -1,6 +1,7 @@
 package model;
 
 import java.time.Period;
+import java.util.ArrayList;
 
 public class Loan {
     // TODO id gets incremented for every new order
@@ -12,11 +13,12 @@ public class Loan {
     // true = lending completed successfully
     // false = lending failed
     private boolean state;
+    private ArrayList<LPCopy> cart;
 
     public Loan(int loanNumber, String borrowDate) {
         this.id = loanNumber;
         this.borrowDate = borrowDate;
-
+        cart = new ArrayList<>();
     }
 
     public String getReturnDate() {
@@ -57,5 +59,15 @@ public class Loan {
 
     public static Period getPERIOD() {
         return PERIOD;
+    }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "id=" + id +
+                ", borrowDate='" + borrowDate + '\'' +
+                ", returnDate='" + returnDate + '\'' +
+                ", state=" + state +
+                '}';
     }
 }

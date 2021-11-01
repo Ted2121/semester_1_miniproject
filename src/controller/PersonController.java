@@ -15,15 +15,17 @@ public class PersonController {
         personContainer.addPerson(new Person(name, address, postalCode, city, phoneNumber));
     }
 
+    // TODO garbage?
     // gets called after an LP is returned
     public void deletePerson(Person person){
-        deletePerson(person);
+        personContainer.deletePerson(person);
     }
 
+    // TODO garbage?
     // for populating the containers
-    public void addPerson(Person person) {
-        personContainer.addPerson(person);
-    }
+//    public void addPerson(Person person) {
+//        personContainer.addPerson(person);
+//    }
 
 
 }
