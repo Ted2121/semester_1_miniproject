@@ -18,10 +18,17 @@ public class LPController {
 
     public void addLP(String title, String publicationDate, String artist, int barcode){
         lpContainer.addLP(new LP(title, publicationDate, artist, barcode));
+
     }
 
-
+    // for populating the containers
     public void addLPCopy(LPCopy lpCopy) {
         lpContainer.addLP(lpCopy);
     }
+
+    // for populating the containers
+    public void addLP(LP lp) {
+        lpContainer.addLP(lp);
+    }
+
 }

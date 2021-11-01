@@ -22,15 +22,17 @@ public class LPContainer {
     public void addLP(LP lp)
     {
         lps.add(lp);
+       // System.out.println(lps);
+
+    }
+
+    public void toString(LP lp){
+
     }
 
     public void getInfo(ArrayList lps){
-//     lps.forEach(lp -> System.out.println("Title: " + lps.get());
-        int i= 0;
-        while(i<lps.size()){
-            if(lps.get(i))
 
-                i++;
-        }
+lps.forEach(lp -> System.out.println(lp.t));
+
     }
 }

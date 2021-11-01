@@ -20,4 +20,9 @@ public class LoanController {
         deleteLoan(loan);
     }
 
+    // for populating the containers
+    public void createLoan(Loan loan) {
+        loanContainer.createLoan(loan);
+    }
+
 }
