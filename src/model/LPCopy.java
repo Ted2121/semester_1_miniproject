@@ -1,7 +1,5 @@
 package model;
 
-import java.time.LocalDate;
-
 public class LPCopy extends LP{
 
     private int serialNumber;
@@ -9,8 +7,8 @@ public class LPCopy extends LP{
     // false = book is not available
     private boolean state;
 
-    public LPCopy(int barcode, String title, String artist, String publicationDate, int serialNumber, boolean state) {
-        super(barcode, title, artist, publicationDate);
+    public LPCopy(String title, String publicationDate, String artist, int barcode, int serialNumber, boolean state) {
+        super(title, publicationDate, artist, barcode);
         this.serialNumber = serialNumber;
         this.state = state;
     }

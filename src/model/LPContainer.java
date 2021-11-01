@@ -23,4 +23,14 @@ public class LPContainer {
     {
         lps.add(lp);
     }
+
+    public void getInfo(ArrayList lps){
+//     lps.forEach(lp -> System.out.println("Title: " + lps.get());
+        int i= 0;
+        while(i<lps.size()){
+            if(lps.get(i))
+
+                i++;
+        }
+    }
 }

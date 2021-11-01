@@ -6,7 +6,7 @@ public class LP {
     private String artist;
     private String publicationDate;
 
-    public LP(int barcode, String title, String artist, String publicationDate) {
+    public LP(String title, String publicationDate, String artist, int barcode) {
         this.barcode = barcode;
         this.title = title;
         this.artist = artist;
