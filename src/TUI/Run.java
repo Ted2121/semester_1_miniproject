@@ -5,15 +5,14 @@ import controller.LPController;
 
 public class Run {
     MainMenu mainMenu;
+    TryMe tryMe;
 
     public Run(){
         mainMenu = new MainMenu();
+        tryMe = new TryMe();
     }
     public static void main(String[] args) {
-        LPController lpController = new LPController();
-        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
-        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
-        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
+
 Run run = new Run();
     }
 }

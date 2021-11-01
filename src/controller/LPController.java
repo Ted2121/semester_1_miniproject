@@ -31,4 +31,8 @@ public class LPController {
         lpContainer.addLP(lp);
     }
 
+    public void getInfo(){
+        lpContainer.getInfo(lpContainer.getLps());
+    }
+
 }

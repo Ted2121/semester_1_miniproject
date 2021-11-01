@@ -44,4 +44,14 @@ public class LP {
     public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
     }
+
+    @Override
+    public String toString() {
+        return "LP{" +
+                "barcode=" + barcode +
+                ", title='" + title + '\'' +
+                ", artist='" + artist + '\'' +
+                ", publicationDate='" + publicationDate + '\'' +
+                '}';
+    }
 }

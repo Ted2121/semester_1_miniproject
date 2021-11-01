@@ -28,4 +28,12 @@ public class LPCopy extends LP{
     public void setState(boolean state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "LPCopy{" +
+                "serialNumber=" + serialNumber +
+                ", state=" + state +
+                "} " + super.toString();
+    }
 }

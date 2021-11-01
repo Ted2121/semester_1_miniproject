@@ -32,7 +32,11 @@ public class LPContainer {
 
     public void getInfo(ArrayList lps){
 
-lps.forEach(lp -> System.out.println(lp.t));
+lps.forEach(lp -> System.out.println(lp));
 
+    }
+
+    public ArrayList<LP> getLps() {
+        return lps;
     }
 }
