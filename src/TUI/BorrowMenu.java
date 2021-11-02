@@ -41,11 +41,19 @@ public class BorrowMenu {
         return choice;
     }
 
-    private int getIntegerFromUser(Scanner keyboard) {
-        while (!keyboard.hasNextInt()) {
+    private int lpCatalog(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("****** LP Catalog ******");
+        lpController.getInfo();
+        int choice = getIntegerFromUser(scanner);
+        return choice;
+    }
+
+    private int getIntegerFromUser(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
             System.out.println("Input must be a number - please try again");
-            keyboard.nextLine();
+            scanner.nextLine();
         }
-        return keyboard.nextInt();
+        return scanner.nextInt();
     }
 }

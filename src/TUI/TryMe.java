@@ -11,9 +11,9 @@ public class TryMe {
     public TryMe(){
 
         //LPController lpController = new LPController();
-        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
-        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
-        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
+        lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
+        lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
+        lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
 
         lpController.getInfo();
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class LPContainer {
 
@@ -24,8 +25,13 @@ public class LPContainer {
     }
 
     public void getInfo(){
+        // used atomic number to be able to increment in lambda
+        AtomicInteger i = new AtomicInteger(1);
         // used lambda to print each LP
-        lps.forEach(lp -> System.out.println(lp));
+        lps.forEach(lp -> {
+            System.out.print("(" + i.getAndIncrement() + ") ");
+            System.out.println(lp);
+                            });
 
     }
 
