@@ -63,6 +63,22 @@ public class Loan {
         return PERIOD;
     }
 
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public LPCopy getLpCopy() {
+        return lpCopy;
+    }
+
+    public void setLpCopy(LPCopy lpCopy) {
+        this.lpCopy = lpCopy;
+    }
+
     @Override
     public String toString() {
         return "Loan " + id + "\n" +

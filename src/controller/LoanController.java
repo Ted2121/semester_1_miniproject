@@ -26,4 +26,12 @@ public class LoanController {
 //        loanContainer.createLoan(loan);
 //    }
 
+    public void setLoanLPCopy(Loan loan, LPCopy lpCopy){
+        loan.setLpCopy(lpCopy);
+    }
+
+    public void setLoanPerson(Loan loan, Person person){
+        loan.setPerson(person);
+    }
+
 }

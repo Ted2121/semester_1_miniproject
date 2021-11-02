@@ -47,9 +47,15 @@ public class LPController {
         lpContainer.getInfo();
     }
 
+    // accessing getFirstCopyAvail of model.LPCopyContainer
     public LPCopy getFirstCopyAvail(ArrayList lpCopies){
        LPCopy copy =  lpCopyContainer.getFirstCopyAvail(lpCopies);
        return copy;
+    }
+
+    // accessing setState method of model.LPCopy through model.LPContainer - keeping a closed architecture
+    public void setLpCopyState(LPCopy lpCopy, boolean state){
+        lpCopyContainer.setCopyState(lpCopy, state);
     }
 
 }

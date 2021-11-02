@@ -46,4 +46,7 @@ public class LPCopyContainer {
         return lpCopy;
     }
 
+    public void setCopyState(LPCopy lpCopy, boolean state){
+        lpCopy.setState(state);
+    }
 }
