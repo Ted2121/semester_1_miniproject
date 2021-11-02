@@ -3,7 +3,7 @@ package controller;
 
 import model.Person;
 import model.PersonContainer;
-import org.w3c.dom.ls.LSOutput;
+
 
 import java.util.Scanner;
 
@@ -33,10 +33,16 @@ public class PersonController {
 //        personContainer.addPerson(person);
 //    }
 
+
+    // this method will get a Person object from the method with the same name in model.PersonContainer
+    // (searches for a Person object that matches the name argument)
+    // if this Person object points to null (person is not in the database)
+    // the method asks if a new Person object should be created,
+    // creates it if the answer is affirmative and returns it
     public Person getPersonByName(String name){
        Person person = personContainer.getPersonByName(name);
         if(person == null){
-            System.err.println("Person not in the database");
+            System.out.println("Person not in the database");
             System.out.println("Would you like to add a new person?");
             Scanner scanner = new Scanner(System.in);
             String answer1 = scanner.next();
@@ -58,6 +64,11 @@ public class PersonController {
 return person;
     }
 
+    // this method will get a Person object from the method with the same name in model.PersonContainer
+    // (searches for a Person object that matches the phoneNumber argument)
+    // if this Person object points to null (person is not in the database)
+    // the method asks if a new Person object should be created,
+    // creates it if the answer is affirmative and returns it
     public Person getPersonByPhoneNumber(int phoneNum){
         Person person = personContainer.getPersonByPhoneNumber(phoneNum);
         if(person == null){
@@ -83,12 +94,14 @@ return person;
         return person;
     }
 
-private String tryAgain(){
+
+    private String tryAgain(){
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.next();
         return answer;
 }
 
+    // a little encapsulation
     public Person createNewPersonText(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter name: ");

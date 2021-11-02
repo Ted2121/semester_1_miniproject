@@ -8,8 +8,9 @@ public class Run {
     TryMe tryMe;
 
     public Run(){
-        mainMenu = new MainMenu();
         tryMe = new TryMe();
+        mainMenu = new MainMenu();
+
     }
     public static void main(String[] args) {
 

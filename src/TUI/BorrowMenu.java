@@ -2,6 +2,7 @@ package TUI;
 
 import controller.LPController;
 import controller.LoanController;
+import controller.PersonController;
 import model.LP;
 
 import java.util.Scanner;
@@ -10,13 +11,16 @@ public class BorrowMenu {
 
     private LPController lpController;
     private LoanController loanController;
+    private PersonController personController;
 
     public BorrowMenu(){
         lpController = new LPController();
         loanController = new LoanController();
+        personController = new PersonController();
     }
 
     public void start() {
+        new MainMenu().findingPersonMenu();
         loanMenu();
     }
 
@@ -53,7 +57,7 @@ public class BorrowMenu {
 
     private int writeLoanMenu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("****** Loan menu ******");
+        System.out.println("****** Borrow menu ******");
         System.out.println(" (1) Create loan");
         System.out.println(" (0) Back");
         System.out.print("\n Choice:");
@@ -75,4 +79,6 @@ public class BorrowMenu {
         }
         return scanner.nextInt();
     }
+
+
 }
