@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PersonContainer {
 
@@ -45,8 +46,9 @@ public class PersonContainer {
         }
         if(found)
             return persons.get(i);
-        else
-            return null;
+        else{
+
+            return null;}
     }
 
 }

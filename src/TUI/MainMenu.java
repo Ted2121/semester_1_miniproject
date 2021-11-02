@@ -32,7 +32,7 @@ public class MainMenu {
     }
 
     private int writeMainMenu() {
-        Scanner keyboard = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("****** Main menu ******");
         System.out.println(" (1) Borrow menu");
         System.out.println(" (2) Return menu");
@@ -41,11 +41,18 @@ public class MainMenu {
         System.out.println(" (0) Quit the program");
         System.out.print("\n Choice:");
 
-        while (!keyboard.hasNextInt()) {
+        while (!scanner.hasNextInt()) {
             System.out.println("Input must be a number - please try again");
-            keyboard.nextLine();
+            scanner.nextLine();
         }
-        int choice = keyboard.nextInt();
+        int choice = scanner.nextInt();
         return choice;
+    }
+
+    private String inputPersonNameMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please insert name: ");
+        String answer = scanner.next();
+        return answer;
     }
 }
