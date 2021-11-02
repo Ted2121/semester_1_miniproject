@@ -21,6 +21,7 @@ public class BorrowMenu {
     }
 
     private void loanMenu() {
+        int id = 1;
         boolean running = true;
         while (running) {
             int choice1 = writeLoanMenu();
@@ -28,21 +29,24 @@ public class BorrowMenu {
                 // TODO implement more menus
                 case 1 -> {
                     int choice2 = lpCatalog();
-                    int id = 0;
-                    // TODO replace placeholder date and title
+
+                    // TODO replace placeholder date
                     // this method call sets the LPCopy of the loan to the first
                     // LPCopy available that matches the title of the LP that
                     // the user chose by inputting an integer for choice2
-                    loanController.setLoanLPCopy(loanController.createLoan(++id, "PLACEHOLDER.DATE"),
+                    loanController.setLoanLPCopy(loanController.createLoan(id, "PLACEHOLDER.DATE"),
                             lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
                                     lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1))));
                     System.out.println( "TEST" + lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1)));
                     System.out.println(loanController.getInfo(loanController.getLoan()));
+                    id++;
+
                 }
                 case 0 -> running = false;
                 default -> {System.err.println("Wrong input");
                             running = false;}
 
+                // TODO test printLoans() method
             }
         }
     }

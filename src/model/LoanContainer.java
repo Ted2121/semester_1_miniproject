@@ -30,6 +30,9 @@ public class LoanContainer {
         loans.remove(loan);
     }
 
-
+    public void printLoans(){
+        // used lambda to print Loans
+        loans.forEach(loan -> System.out.println(loan));
+    }
 
 }

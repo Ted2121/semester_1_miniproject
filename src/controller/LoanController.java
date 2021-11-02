@@ -18,6 +18,7 @@ public class LoanController {
 
     public Loan createLoan(int id, String borrowDate){
         this.loan = new Loan(id, borrowDate);
+        loan.setId(id);
         loanContainer.createLoan(loan);
       return loan;
     }
@@ -47,5 +48,9 @@ public class LoanController {
 
     public Loan getLoan() {
         return loan;
+    }
+
+    public void printLoans(){
+        loanContainer.printLoans();
     }
 }
