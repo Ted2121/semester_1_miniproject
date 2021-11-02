@@ -51,4 +51,20 @@ public class PersonContainer {
             return null;}
     }
 
+    public Person getPersonByPhoneNumber(int phoneNum){
+        boolean found = false;
+        int i = 0;
+        while(!found && i<persons.size()){
+            if(persons.get(i).getPhoneNumber() == phoneNum)
+                found = true;
+            else
+                i++;
+        }
+        if(found)
+            return persons.get(i);
+        else{
+
+            return null;}
+    }
+
 }
