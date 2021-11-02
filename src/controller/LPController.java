@@ -2,6 +2,8 @@ package controller;
 
 import model.*;
 
+import java.util.ArrayList;
+
 public class LPController {
 
     private LPCopyContainer lpCopyContainer;
@@ -23,6 +25,10 @@ public class LPController {
 
     }
 
+    public LPCopyContainer getLpCopyContainer() {
+        return lpCopyContainer;
+    }
+
     // TODO garbage?
     // for populating the containers
 //    public void addLPCopy(LPCopy lpCopy) {
@@ -39,6 +45,11 @@ public class LPController {
     // getting info using closed architecture
     public void getInfo(){
         lpContainer.getInfo();
+    }
+
+    public LPCopy getFirstCopyAvail(ArrayList lpCopies){
+       LPCopy copy =  lpCopyContainer.getFirstCopyAvail(lpCopies);
+       return copy;
     }
 
 }

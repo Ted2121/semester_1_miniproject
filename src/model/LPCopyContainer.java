@@ -18,6 +18,10 @@ public class LPCopyContainer {
         return instance;
     }
 
+    public ArrayList<LPCopy> getLpCopies() {
+        return lpCopies;
+    }
+
     // part of CRUD LP
     public void addLPCopy(LPCopy lpCopy)
     {
@@ -28,4 +32,18 @@ public class LPCopyContainer {
         // used lambda to print each LPCopy
         lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
     }
+
+    public LPCopy getFirstCopyAvail(ArrayList lpCopies){
+
+        LPCopy lpCopy = null;
+
+        for (int i = 0; i < lpCopies.size(); i++){
+            lpCopy = (LPCopy) lpCopies.get(i);
+            if (lpCopy.getState()){
+        return lpCopy;
+            }
+        }
+        return lpCopy;
+    }
+
 }

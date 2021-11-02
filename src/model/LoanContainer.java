@@ -18,6 +18,8 @@ public class LoanContainer {
         return instance;
     }
 
+
+
     // part of Loan use case - gets called whenever there is a new loan request
     public void createLoan(Loan loan)
     {
