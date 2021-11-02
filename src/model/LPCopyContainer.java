@@ -33,13 +33,13 @@ public class LPCopyContainer {
         lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
     }
 
-    public LPCopy getFirstCopyAvail(ArrayList lpCopies){
+    public LPCopy getFirstCopyAvail(ArrayList lpCopies, String title){
 
         LPCopy lpCopy = null;
 
         for (int i = 0; i < lpCopies.size(); i++){
             lpCopy = (LPCopy) lpCopies.get(i);
-            if (lpCopy.getState()){
+            if (lpCopy.getTitle().equals(title) && lpCopy.getState()){
         return lpCopy;
             }
         }

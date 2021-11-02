@@ -1,15 +1,20 @@
 package TUI;
 
 import controller.LPController;
+import controller.LoanController;
+import model.LP;
+import model.Loan;
 
 import java.util.Scanner;
 
 public class BorrowMenu {
 
     private LPController lpController;
+    private LoanController loanController;
 
     public BorrowMenu(){
         lpController = new LPController();
+        loanController = new LoanController();
     }
 
     public void start() {
@@ -24,11 +29,16 @@ public class BorrowMenu {
                 // TODO implement more menus
                 case 1 -> {
                     int choice2 = lpCatalog();
-                    switch (choice2){
-                        case 1 -> {
-
-                        }
-                    }
+                    int id = 0;
+                    // TODO replace placeholder date and title
+                    // this method call sets the LPCopy of the loan to the first
+                    // LPCopy available that matches the title of the LP that
+                    // the user chose by inputting an integer for choice2
+                    loanController.setLoanLPCopy(loanController.createLoan(++id, "PLACEHOLDER.DATE"),
+                            lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
+                                    lpController.getLPNameToString((LP) lpController.getLPs().get(choice2))));
+                    System.out.println( "TEST" + lpController.getLPNameToString((LP) lpController.getLPs().get(choice2)));
+                    System.out.println(loanController.getInfo(loanController.getLoan()));
                 }
                 case 0 -> running = false;
                 default -> {System.err.println("Wrong input");
@@ -39,21 +49,19 @@ public class BorrowMenu {
     }
 
     private int writeLoanMenu() {
-        Scanner keyboard = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("****** Loan menu ******");
         System.out.println(" (1) Create loan");
         System.out.println(" (0) Back");
         System.out.print("\n Choice:");
-        int choice2 = getIntegerFromUser(keyboard);
-        return choice2;
+        return getIntegerFromUser(scanner);
     }
 
-    private int lpCatalog(){
+    public int lpCatalog(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("****** LP Catalog ******");
         lpController.getInfo();
-        int choice1 = getIntegerFromUser(scanner);
-        return choice1;
+        return getIntegerFromUser(scanner);
     }
 
     private int getIntegerFromUser(Scanner scanner) {

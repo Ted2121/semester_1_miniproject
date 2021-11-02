@@ -18,9 +18,9 @@ public class MainMenu {
         while (running) {
             int choice = writeMainMenu();
             switch (choice) {
-                case 1 -> System.out.println(" Not implemented yet");
+                case 1 -> borrowMenu.start();
                 case 2 -> System.out.println(" Not implemented yet");
-                case 3 -> borrowMenu.start();
+                case 3 -> borrowMenu.lpCatalog();
                 case 9 -> System.out.println(" Not implemented yet");
                 case 0 -> {
                     System.out.println(" Thank you and goodbye.");

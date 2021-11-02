@@ -6,6 +6,7 @@ import model.*;
 
 public class LoanController {
     private LoanContainer loanContainer;
+    Loan loan;
 
     public LoanController(){
         loanContainer = LoanContainer.getInstance();
@@ -13,6 +14,12 @@ public class LoanController {
 
     public void createLoan(int loanNumber, String borrowDate, Person person, LPCopy lpCopy){
         loanContainer.createLoan(new Loan(loanNumber, borrowDate, person, lpCopy));
+    }
+
+    public Loan createLoan(int id, String borrowDate){
+        this.loan = new Loan(id, borrowDate);
+        loanContainer.createLoan(loan);
+      return loan;
     }
 
     // gets called after an LP is returned
@@ -34,4 +41,11 @@ public class LoanController {
         loan.setPerson(person);
     }
 
+    public String getInfo(Loan loan){
+        return loan.toString();
+    }
+
+    public Loan getLoan() {
+        return loan;
+    }
 }

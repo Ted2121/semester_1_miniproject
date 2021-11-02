@@ -16,11 +16,18 @@ public class Loan {
     private Person person;
     private LPCopy lpCopy;
 
-    public Loan(int loanNumber, String borrowDate, Person person, LPCopy lpCopy) {
-        this.id = loanNumber;
+    public Loan(int id, String borrowDate, Person person, LPCopy lpCopy) {
+        this.id = id;
+        // TODO setborrowdate in controller and container
         this.borrowDate = borrowDate;
         this.person = person;
         this.lpCopy = lpCopy;
+    }
+
+    public Loan(int id, String borrowDate) {
+        this.id = id;
+        // TODO setborrowdate in controller and container
+        this.borrowDate = borrowDate;
     }
 
     public String getReturnDate() {
@@ -84,6 +91,7 @@ public class Loan {
         return "Loan " + id + "\n" +
                 "borrowDate: " + borrowDate + "\n" +
                 "returnDate: " + returnDate + "\n" +
+                "LP: " + lpCopy.toString() + "\n" +
                 "----------------------------------------------";
     }
 }

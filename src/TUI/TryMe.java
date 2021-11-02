@@ -12,19 +12,21 @@ public class TryMe {
 
         //LPController lpController = new LPController();
         lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
-        lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
+        lpController.addLP("Radio gaga", "19.08.1986", "Queen", 223);
         lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
 
         //lpController.getInfo();
 
-        lpController.addLPCopy("test1", "19.08.1986", "Queen", 223, 1, false);
-        lpController.addLPCopy("test2", "19.08.1986", "Queen", 223, 1, false);
-        lpController.addLPCopy("test true", "19.08.1986", "Queen", 223, 1, true);
-        lpController.addLPCopy("test 3", "19.08.1986", "Queen", 223, 1, false);
-        lpController.addLPCopy("test true 2", "19.08.1986", "Queen", 223, 1, true);
+        // TODO title gets messed up
+        lpController.addLPCopy("test1", "19.08.1986", "Queen", 223, 1, true);
+        lpController.addLPCopy("test2", "19.08.1986", "Queen", 223, 1, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 1, true);
+        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 221, 1, true);
+        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 224, 1, true);
+
 
         // successfull test for getFirstCopyAvailable method
-        System.out.println(lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies()));
+        // System.out.println(lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(), "test1"));
 
 
 //        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);

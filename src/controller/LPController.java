@@ -48,8 +48,8 @@ public class LPController {
     }
 
     // accessing getFirstCopyAvail of model.LPCopyContainer
-    public LPCopy getFirstCopyAvail(ArrayList lpCopies){
-       LPCopy copy =  lpCopyContainer.getFirstCopyAvail(lpCopies);
+    public LPCopy getFirstCopyAvail(ArrayList lpCopies, String title){
+       LPCopy copy =  lpCopyContainer.getFirstCopyAvail(lpCopies, title);
        return copy;
     }
 
@@ -58,4 +58,12 @@ public class LPController {
         lpCopyContainer.setCopyState(lpCopy, state);
     }
 
+    public ArrayList getLPs(){
+        ArrayList LPs = lpContainer.getLps();
+        return LPs;
+    }
+
+    public String getLPNameToString(LP lp){
+        return lp.NameToString();
+    }
 }

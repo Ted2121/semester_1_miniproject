@@ -53,4 +53,8 @@ public class LP {
                 "barcode: " + barcode;
     }
 
+
+    public String NameToString() {
+        return title;
+    }
 }
