@@ -34,9 +34,9 @@ public class MainMenu {
     private int writeMainMenu() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("****** Main menu ******");
-        System.out.println(" (1) Borrower menu");
-        System.out.println(" (2) LP menu");
-        System.out.println(" (3) Loan menu");
+        System.out.println(" (1) Borrow menu");
+        System.out.println(" (2) Return menu");
+        System.out.println(" (3) LP Catalog");
         System.out.println(" (9) Generate testdata");// will generate testdata, delete in final version
         System.out.println(" (0) Quit the program");
         System.out.print("\n Choice:");

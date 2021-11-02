@@ -31,9 +31,12 @@ public class LPCopy extends LP{
 
     @Override
     public String toString() {
-        return "LPCopy{" +
-                "serialNumber=" + serialNumber +
-                ", state=" + state +
-                "} " + super.toString();
+        String availability = "unavailable";
+        if (state) availability = "available";
+
+        return super.toString() + "\n" +
+                "serial number: " + serialNumber + "\n" +
+                "state: " + availability + "\n" +
+                "----------------------------------------------";
     }
 }

@@ -21,9 +21,12 @@ public class BorrowMenu {
         while (running) {
             int choice = writeLoanMenu();
             switch (choice) {
-                case 1 -> System.out.println(" Not implemented yet");
+                // TODO implement more menus
+                case 1 -> System.out.println();//lpcopyCatalog();
                 case 0 -> running = false;
-                default -> System.out.println(" Unknown error occured, choice = " + choice);
+                default -> {System.err.println("Wrong input");
+                            running = false;}
+
             }
         }
     }
@@ -40,7 +43,7 @@ public class BorrowMenu {
 
     private int getIntegerFromUser(Scanner keyboard) {
         while (!keyboard.hasNextInt()) {
-            System.out.println("Input must be a number - please try agai");
+            System.out.println("Input must be a number - please try again");
             keyboard.nextLine();
         }
         return keyboard.nextInt();

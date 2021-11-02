@@ -11,8 +11,8 @@ public class LoanController {
         loanContainer = LoanContainer.getInstance();
     }
 
-    public void createLoan(int loanNumber, String borrowDate){
-        loanContainer.createLoan(new Loan(loanNumber, borrowDate));
+    public void createLoan(int loanNumber, String borrowDate, Person person, LPCopy lpCopy){
+        loanContainer.createLoan(new Loan(loanNumber, borrowDate, person, lpCopy));
     }
 
     // gets called after an LP is returned

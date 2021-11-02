@@ -47,11 +47,10 @@ public class LP {
 
     @Override
     public String toString() {
-        return "LP{" +
-                "barcode=" + barcode +
-                ", title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", publicationDate='" + publicationDate + '\'' +
-                '}';
+        return "LP title: " + title + "\n" +
+                "artist: " + artist + "\n" +
+                "publicationDate: " + publicationDate + "\n" +
+                "barcode: " + barcode;
     }
+
 }

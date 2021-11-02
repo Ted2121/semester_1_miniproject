@@ -57,12 +57,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", postalCode=" + postalCode +
-                ", city='" + city + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                '}';
+        return "name: " + name + "\n" +
+                "address: " + address + "\n" +
+                "postal code: " + postalCode + "\n" +
+                "city: " + city + "\n" +
+                "phone number: " + phoneNumber + "\n" +
+                "----------------------------------------------";
     }
 }

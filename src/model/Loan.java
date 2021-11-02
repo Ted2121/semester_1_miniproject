@@ -13,12 +13,14 @@ public class Loan {
     // true = lending completed successfully
     // false = lending failed
     private boolean state;
-    private ArrayList<LPCopy> cart;
+    private Person person;
+    private LPCopy lpCopy;
 
-    public Loan(int loanNumber, String borrowDate) {
+    public Loan(int loanNumber, String borrowDate, Person person, LPCopy lpCopy) {
         this.id = loanNumber;
         this.borrowDate = borrowDate;
-        cart = new ArrayList<>();
+        this.person = person;
+        this.lpCopy = lpCopy;
     }
 
     public String getReturnDate() {
@@ -63,11 +65,9 @@ public class Loan {
 
     @Override
     public String toString() {
-        return "Loan{" +
-                "id=" + id +
-                ", borrowDate='" + borrowDate + '\'' +
-                ", returnDate='" + returnDate + '\'' +
-                ", state=" + state +
-                '}';
+        return "Loan " + id + "\n" +
+                "borrowDate: " + borrowDate + "\n" +
+                "returnDate: " + returnDate + "\n" +
+                "----------------------------------------------";
     }
 }
