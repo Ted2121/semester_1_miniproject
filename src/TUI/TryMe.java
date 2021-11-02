@@ -13,12 +13,12 @@ public class TryMe {
         //LPController lpController = new LPController();
         lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
         lpController.addLP("Radio gaga", "19.08.1986", "Queen", 223);
-        lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 223);
+        lpController.addLP("wtf", "19.08.1986", "Queen", 223);
 
         //lpController.getInfo();
 
         // TODO title gets messed up
-        lpController.addLPCopy("test1", "19.08.1986", "Queen", 223, 1, true);
+        lpController.addLPCopy("wtf", "19.08.1986", "Queen", 223, 1, true);
         lpController.addLPCopy("test2", "19.08.1986", "Queen", 223, 1, true);
         lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 1, true);
         lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 221, 1, true);

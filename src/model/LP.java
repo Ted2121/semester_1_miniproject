@@ -54,7 +54,7 @@ public class LP {
     }
 
 
-    public String NameToString() {
+    public String TitleToString() {
         return title;
     }
 }

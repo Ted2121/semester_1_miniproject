@@ -3,7 +3,6 @@ package TUI;
 import controller.LPController;
 import controller.LoanController;
 import model.LP;
-import model.Loan;
 
 import java.util.Scanner;
 
@@ -36,8 +35,8 @@ public class BorrowMenu {
                     // the user chose by inputting an integer for choice2
                     loanController.setLoanLPCopy(loanController.createLoan(++id, "PLACEHOLDER.DATE"),
                             lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
-                                    lpController.getLPNameToString((LP) lpController.getLPs().get(choice2))));
-                    System.out.println( "TEST" + lpController.getLPNameToString((LP) lpController.getLPs().get(choice2)));
+                                    lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1))));
+                    System.out.println( "TEST" + lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1)));
                     System.out.println(loanController.getInfo(loanController.getLoan()));
                 }
                 case 0 -> running = false;

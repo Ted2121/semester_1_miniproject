@@ -63,7 +63,7 @@ public class LPController {
         return LPs;
     }
 
-    public String getLPNameToString(LP lp){
-        return lp.NameToString();
+    public String getLPTitleToString(LP lp){
+        return lp.TitleToString();
     }
 }
