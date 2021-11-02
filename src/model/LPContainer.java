@@ -25,7 +25,7 @@ public class LPContainer {
     }
 
     public void getInfo(){
-        // used atomic number to be able to increment in lambda
+        // used atomic number to be able to increment in lambda - for lpCatalog method in model.borrowMenu
         AtomicInteger i = new AtomicInteger(1);
         // used lambda to print each LP
         lps.forEach(lp -> {
