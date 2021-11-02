@@ -27,5 +27,7 @@ public class PersonController {
 //        personContainer.addPerson(person);
 //    }
 
-
+    public Person getStudentByName(String name){
+        return personContainer.getPersonByName(name);
+    }
 }

@@ -32,4 +32,21 @@ public class PersonContainer {
         // used lambda to print each LPCopy
         persons.forEach(person -> System.out.println(person));
     }
+
+    public Person getPersonByName(String name){
+
+        boolean found = false;
+        int i = 0;
+        while(!found && i<persons.size()){
+            if(persons.get(i).getName().equals(name))
+                found = true;
+            else
+                i++;
+        }
+        if(found)
+            return persons.get(i);
+        else
+            return null;
+    }
+
 }
