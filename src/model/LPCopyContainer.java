@@ -106,7 +106,12 @@ public class LPCopyContainer {
         if(found)
             return lpCopies.get(i);
         else{
-
+            System.out.println(lpCopies.get(i));
             return null;}
+    }
+
+    public int getLPCopySerialNumber(LPCopy lpCopy){
+       return lpCopy.getSerialNumber();
+
     }
 }

@@ -25,10 +25,10 @@ public class TryMe {
         //lpController.getInfo();
 
         lpController.addLPCopy("wtf", "19.08.1986", "Queen", 223, 1, true);
-        lpController.addLPCopy("test2", "19.08.1986", "Queen", 223, 1, true);
-        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 1, true);
-        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 221, 1, true);
-        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 224, 1, true);
+        lpController.addLPCopy("test2", "19.08.1986", "Queen", 223, 2, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 3, true);
+        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 221, 4, true);
+        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 224, 5, true);
 
         personController.addPerson("Ted", "Letvadvej 3A", 9200, "Aalborg", 31896135);
         personController.addPerson("Andreea", "Vesterbro 11", 9000, "Aalborg", 43214325);

@@ -156,10 +156,10 @@ return person;
         personContainer.deletePerson(person);
     }
 
-    public Person searchAndRetrievePerson(String name){
-
-        person = getPersonByName(name);
-        return person;
-    }
+//    public Person searchAndRetrievePerson(String name){
+//
+//        person = getPersonByName(name);
+//        return person;
+//    }
 
 }

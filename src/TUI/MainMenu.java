@@ -365,15 +365,15 @@ public class MainMenu {
 
     // TODO finish the menu
     private void crudLPCopyMenu(){
-        writeCrudLPCOpyMenu();
 
-        int choice = writeCrudMenu1();
+
+        int choice = writeCrudLPCOpyMenu();
 
             switch (choice) {
                 case 1 -> lpController.createNewLPCopyMenu();
                 case 2 -> lpCopyCatalogDisplay();
-                case 3 -> lpCopyCatalogDisplay();
-                case 4 -> lpCopyCatalogDisplay();
+                case 3 -> changeLPCopyInformation();
+                case 4 -> deleteLPCopyMenu();
                 default ->{
                     System.out.println("Invalid input");
                     mainMenu();
@@ -381,6 +381,11 @@ public class MainMenu {
             }
 
 
+    }
+
+    private void deleteLPCopyMenu() {
+        findingLPCopyMenu();
+        lpController.deleteLPCopy(lpController.getLPCopyBySerialNumber(lpCopySerialNumberToChange));
     }
 
     private void changeLPCopyInformation(){
@@ -468,7 +473,8 @@ public class MainMenu {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter LP Copy's serial number:");
             lpCopySerialNumberToChange = scanner.nextInt();
-//            System.out.println("TESTING " + lpTitleToChange);
+          System.out.println("TESTING " + lpCopySerialNumberToChange);
+            System.out.println(lpController.getLPCopySerialNumber());
         } catch (InputMismatchException e){
             System.out.println("Invalid input");
         }

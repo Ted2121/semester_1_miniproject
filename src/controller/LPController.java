@@ -270,4 +270,8 @@ public class LPController {
         }
         return lpCopy;
     }
+
+    public int getLPCopySerialNumber(){
+       return lpCopyContainer.getLPCopySerialNumber(lpCopy);
+    }
 }
