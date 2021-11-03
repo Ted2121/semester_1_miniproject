@@ -43,11 +43,7 @@ public class BorrowMenu {
                     loanController.setLoanLPCopyAndPerson(loanController.createLoan(id, "PLACEHOLDER.DATE"),
                             lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
                                     lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1))),
-                            personController.addPerson(getNameFromMatch(),
-                                    getAddressFromMatch(),
-                                    getPostalCodeFromMatch(),
-                                    getCityFromMatch(),
-                                    getPhoneNUmberFromMatch()));
+                            personController.getPersonByName(MainMenu.getPersonName()));
                     System.out.println( "TEST" + lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1)));
                     System.out.println(loanController.getInfo(loanController.getLoan()));
                     id++;

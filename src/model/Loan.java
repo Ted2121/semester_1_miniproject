@@ -1,5 +1,7 @@
 package model;
 
+import TUI.MainMenu;
+
 import java.time.Period;
 import java.util.ArrayList;
 
@@ -94,6 +96,7 @@ public class Loan {
                 "borrowDate: " + borrowDate + "\n" +
                 "returnDate: " + returnDate + "\n" +
                 "LP: " + lpCopy.toString() + "\n" +
+                "Person: " + person.toString() + "\n" +
                 "----------------------------------------------";
     }
 }

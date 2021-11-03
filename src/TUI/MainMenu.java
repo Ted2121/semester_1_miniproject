@@ -14,6 +14,10 @@ public class MainMenu {
     private PersonController personController;
     private static String personName;
 
+    public static String getPersonName() {
+        return personName;
+    }
+
     public MainMenu() {
         borrowMenu = new BorrowMenu();
         lpController = new LPController();
