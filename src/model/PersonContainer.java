@@ -93,4 +93,14 @@ public class PersonContainer {
         person.setPhoneNumber(phoneNumber);
     }
 
+    public ArrayList<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(ArrayList<Person> persons) {
+        this.persons = persons;
+    }
+
+
+
 }

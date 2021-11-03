@@ -5,6 +5,7 @@ import model.Person;
 import model.PersonContainer;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PersonController {
@@ -141,6 +142,12 @@ return person;
     // part of CRUD Person
     public void deletePerson(Person person){
         personContainer.deletePerson(person);
+    }
+
+    public Person searchAndRetrievePerson(String name){
+
+        person = getPersonByName(name);
+        return person;
     }
 
 }

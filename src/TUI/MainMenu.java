@@ -12,6 +12,7 @@ public class MainMenu {
     private LPController lpController;
     private LoanController loanController;
     private PersonController personController;
+    private static String personName;
 
     public MainMenu() {
         borrowMenu = new BorrowMenu();
@@ -72,12 +73,19 @@ public class MainMenu {
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Please insert name: ");
+
             answer = scanner.next();
+            personName = answer;
         }catch (InputMismatchException e){
             System.out.println("Invalid input");
         }
         return answer;
     }
+
+//    public String getNameFromInput(){
+//        String name = inputPersonNameMenu();
+//        return name;
+//    }
 
     private int inputPersonPhoneNumberMenu(){
         int answer = 0;
