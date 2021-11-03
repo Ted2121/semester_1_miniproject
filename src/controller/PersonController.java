@@ -61,6 +61,14 @@ public class PersonController {
 return person;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
     // this method will get a Person object from the method with the same name in model.PersonContainer
     // (searches for a Person object that matches the phoneNumber argument)
     // if this Person object points to null (person is not in the database)

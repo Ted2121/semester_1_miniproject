@@ -3,7 +3,7 @@ package TUI;
 import controller.LPController;
 import controller.LoanController;
 import controller.PersonController;
-import model.Person;
+//import model.Person;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -137,7 +137,7 @@ public class MainMenu {
     // TODO finish the menu
     private void crudPersonMenu(){
 
-        boolean running = true;
+//        boolean running = true;
         int choice = writeCrudPersonMenu();
 
             switch (choice) {
@@ -145,7 +145,7 @@ public class MainMenu {
                 case 2 -> personController.getInfo();
                 case 3 -> changePersonalInformationMenu();
                 case 4 -> {
-                    running = false;
+
                     mainMenu();
                 }
             }
@@ -186,7 +186,7 @@ public class MainMenu {
         Scanner scanner = new Scanner(System.in);
 
         findingPersonMenu();
-        Person personToModify = personController.getPersonByName(personNameToChange);
+        personController.setPerson(personController.getPersonByName(personNameToChange));
         int choice = writeChangePersonalInformationMenu();
 
         try {
@@ -194,27 +194,27 @@ public class MainMenu {
                 case 1 -> {
                     System.out.println("Enter new name:");
                     newName = scanner.next();
-                    personToModify.setName(newName);
+                    personController.updatePersonName(con, newName);
                 }
                 case 2 -> {
                     System.out.println("Enter new address:");
                     newAddress = scanner.next();
-                    personToModify.setAddress(newAddress);
+                    personController.updatePersonAddress(personToModify, newAddress);
                 }
                 case 3 -> {
                     System.out.println("Enter new postal code:");
                     newPostalCode = scanner.nextInt();
-                    personToModify.setPostalCode(newPostalCode);
+                    personController.updatePersonPostalCode(personToModify, newPostalCode);
                 }
                 case 4 -> {
                     System.out.println("Enter new city:");
                     newCity = scanner.next();
-                    personToModify.setCity(newCity);
+                    personController.updatePersonCity(personToModify, newCity);
                 }
                 case 5 -> {
                     System.out.println("Enter new phone number:");
                     newPhoneNumber = scanner.nextInt();
-                    personToModify.setPhoneNumber(newPhoneNumber);
+                    personController.updatePersonPhoneNumber(personToModify, newPhoneNumber);
                 }
                 case 6 -> crudPersonMenu();
                 default -> System.exit(0);
@@ -379,7 +379,8 @@ public class MainMenu {
             switch (choice) {
                 case 1 -> {personController.getPersonByName(inputPersonNameMenu());
                 running = false;}
-                case 2 -> personController.getPersonByPhoneNumber(inputPersonPhoneNumberMenu());
+                case 2 -> {personController.getPersonByPhoneNumber(inputPersonPhoneNumberMenu());
+                    running = false;}
                 case 3 -> {running = false;
                 mainMenu();}
                 default -> {
