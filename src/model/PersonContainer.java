@@ -53,20 +53,38 @@ public class PersonContainer {
     }
 
     public Person getPersonByPhoneNumber(int phoneNum){
+        Person person = null;
         boolean found = false;
         int i = 0;
-        while(!found && i<persons.size()){
-            if(persons.get(i).getPhoneNumber() == phoneNum)
+        while(!found && i < persons.size()){
+            if(persons.get(i).getPhoneNumber() == phoneNum) {
+                person = persons.get(i);
                 found = true;
-            else
+                return person;
+            }else {
                 i++;
+            }
         }
-        if(found)
-            return persons.get(i);
-        else{
-
-            return null;}
+        return person;
     }
+
+//    LPCopy lpCopy = null;
+//    boolean found = false;
+//    int i = 0;
+//        while (!found && i < lpCopies.size()) {
+//        if (lpCopies.get(i).getSerialNumber() == serialNumber) {
+//            System.out.println("Test" + lpCopies.get(i));
+//            lpCopy = lpCopies.get(i);
+//            found = true;
+//            return lpCopy;
+//        } else {
+//            i++;
+//
+//        }
+//
+//    }
+//        return lpCopy;
+//}
 
     // part of CRUD Person
     public void updatePersonName(Person person, String name){
