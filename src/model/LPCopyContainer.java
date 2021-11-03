@@ -55,6 +55,8 @@ public class LPCopyContainer {
         lpCopy.setPublicationDate(newPublicationDate);
     }
 
+
+
 //    public void getInfo(){
 //        // used lambda to print each LPCopy
 //        lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
@@ -84,15 +86,19 @@ public class LPCopyContainer {
         return lpCopy;
     }
 
-    public void setCopyState(LPCopy lpCopy, boolean state){
+    public void updateLPCopyState(LPCopy lpCopy, boolean state){
         lpCopy.setState(state);
     }
 
-    public LP getLPCopyByTitle(String title) {
+    public void updateLPCopySerialNumber(LPCopy lpCopy, int serialNumber){
+        lpCopy.setSerialNumber(serialNumber);
+    }
+
+    public LPCopy getLPCopyBySerialNumber(int serialNumber) {
         boolean found = false;
         int i = 0;
         while(!found && i<lpCopies.size()){
-            if(lpCopies.get(i).getTitle().equals(title))
+            if(lpCopies.get(i).getSerialNumber() == serialNumber)
                 found = true;
             else
                 i++;

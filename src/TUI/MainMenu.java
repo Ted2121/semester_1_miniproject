@@ -18,7 +18,7 @@ public class MainMenu {
     private static String personNameToChange;
     private static int personPhoneNumberToChange;
     private static String lpTitleToChange;
-    private static String lpCopySerialNumberToChange;
+    private static int lpCopySerialNumberToChange;
 
     public static String getPersonName() {
         return personName;
@@ -294,12 +294,12 @@ public class MainMenu {
                     lpController.updateLPArtist(lpController.getLp(), newArtist);
                 }
                 case 3 -> {
-                    System.out.println("Enter new postal code:");
+                    System.out.println("Enter new publication date:");
                     newPublicationDate = scanner.nextLine();
                     lpController.updateLPPublicationDate(lpController.getLp(), newPublicationDate);
                 }
                 case 4 -> {
-                    System.out.println("Enter new city:");
+                    System.out.println("Enter new barcode:");
                     newBarcode = scanner.nextInt();
                     lpController.updateLPBarcode(lpController.getLp(), newBarcode);
                 }
@@ -321,7 +321,7 @@ public class MainMenu {
             System.out.println(" (2) Change artist");
             System.out.println(" (3) Change publication date");
             System.out.println(" (4) Change barcode");
-            System.out.println(" (6) Back");
+            System.out.println(" (5) Back");
             choice = scanner.nextInt();
             return choice;
 
@@ -366,19 +366,112 @@ public class MainMenu {
     // TODO finish the menu
     private void crudLPCopyMenu(){
         writeCrudLPCOpyMenu();
-        boolean running = true;
+
         int choice = writeCrudMenu1();
-        while (running){
+
             switch (choice) {
-                case 1 -> System.out.println("placeholder");
+                case 1 -> lpController.createNewLPCopyMenu();
                 case 2 -> lpCopyCatalogDisplay();
-                case 4 -> {
-                    running = false;
+                case 3 -> lpCopyCatalogDisplay();
+                case 4 -> lpCopyCatalogDisplay();
+                default ->{
+                    System.out.println("Invalid input");
                     mainMenu();
                 }
             }
+
+
+    }
+
+    private void changeLPCopyInformation(){
+        String newTitle = null;
+        String newArtist = null;
+        int newBarcode = 0;
+        String newPublicationDate = null;
+        int newSerialNumber = 0;
+        boolean newState = false;
+
+
+        findingLPCopyMenu();
+        lpController.setLpCopy(lpController.getLPCopyBySerialNumber(lpCopySerialNumberToChange));
+
+        int choice = writeChangeLPCopyInformationMenu();
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+            switch (choice) {
+                case 1 -> {
+                    System.out.println("Enter new title:");
+                    newTitle = scanner.nextLine();
+                    lpController.updateLPCopyTitle(lpController.getLpCopy(), newTitle);
+                }
+                case 2 -> {
+                    System.out.println("Enter new artist:");
+                    newArtist = scanner.nextLine();
+                    lpController.updateLPCopyArtist(lpController.getLpCopy(), newArtist);
+                }
+                case 3 -> {
+                    System.out.println("Enter new publication date:");
+                    newPublicationDate = scanner.nextLine();
+                    lpController.updateLPCopyPublicationDate(lpController.getLpCopy(), newPublicationDate);
+                }
+                case 4 -> {
+                    System.out.println("Enter new barcode:");
+                    newBarcode = scanner.nextInt();
+                    lpController.updateLPCopyBarcode(lpController.getLpCopy(), newBarcode);
+                }
+                case 5 -> {
+                    System.out.println("Enter new serial number:");
+                    newSerialNumber = scanner.nextInt();
+                    lpController.updateLPCopySerialNumber(lpController.getLpCopy(), newSerialNumber);
+                }
+                case 6 -> {
+                    System.out.println("Enter new state:");
+                    newState = scanner.nextBoolean();
+                    lpController.updateLPCopyState(lpController.getLpCopy(), newState);
+                }
+
+                case 7 -> crudLPCopyMenu();
+                default -> System.exit(0);
+            }
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+    }
+
+    private int writeChangeLPCopyInformationMenu() {
+        int choice = 0;
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println(" (1) Change title");
+            System.out.println(" (2) Change artist");
+            System.out.println(" (3) Change publication date");
+            System.out.println(" (4) Change barcode");
+            System.out.println(" (5) Change serial number");
+            System.out.println(" (6) Change state");
+            System.out.println(" (7) Back");
+            choice = scanner.nextInt();
+            return choice;
+
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input");
         }
 
+        return choice;
+    }
+
+
+    private void findingLPCopyMenu(){
+        try{
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter LP Copy's serial number:");
+            lpCopySerialNumberToChange = scanner.nextInt();
+//            System.out.println("TESTING " + lpTitleToChange);
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
     }
 
     // this method only displays the catalog - different from the one in borrow menu that also takes user input

@@ -12,6 +12,7 @@ public class LPController {
     private LPContainer lpContainer;
     private PersonContainer personContainer;
     private LP lp;
+    LPCopy lpCopy;
 
     public LPController(){
         lpCopyContainer = LPCopyContainer.getInstance();
@@ -65,6 +66,31 @@ public class LPController {
         return lp;
     }
 
+    public LPCopy getLPCopyBySerialNumber(int serialNumber){
+        LPCopy lpCopy = lpCopyContainer.getLPCopyBySerialNumber(serialNumber);
+        if(lp == null){
+            System.err.println("LP Copy not in the database");
+            System.out.println("Would you like to add a new LP Copy?");
+            Scanner scanner = new Scanner(System.in);
+            String answer1 = scanner.next();
+            switch (answer1){
+                case "yes", "Yes" -> {
+                    lp = createNewLPMenu();
+                    return lpCopy;
+                }
+                default -> {
+
+                    String answer2 = tryAgain();
+                    switch (answer2){
+                        case "yes", "Yes" -> getLPCopyBySerialNumber(serialNumber);
+                        default -> System.exit(0);
+                    }
+                }
+            }
+        }
+        return lpCopy;
+    }
+
     public LP getLp() {
         return lp;
     }
@@ -108,7 +134,7 @@ public class LPController {
 
     // accessing setState method of model.LPCopy through model.LPContainer - keeping a closed architecture
     public void setLpCopyState(LPCopy lpCopy, boolean state){
-        lpCopyContainer.setCopyState(lpCopy, state);
+        lpCopyContainer.updateLPCopyState(lpCopy, state);
     }
 
     public ArrayList getLPs(){
@@ -166,6 +192,16 @@ public class LPController {
         lpCopyContainer.deleteLPCopy(lpCopy);
     }
 
+    // part of CRUD LPCopy
+    public void updateLPCopyState(LPCopy lpCopy, boolean state){
+        lpCopyContainer.updateLPCopyState(lpCopy, state);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopySerialNumber(LPCopy lpCopy, int serialNumber){
+        lpCopyContainer.updateLPCopySerialNumber(lpCopy, serialNumber);
+    }
+
     public String getLPTitleToString(LP lp){
         return lp.TitleToString();
     }
@@ -194,5 +230,44 @@ public class LPController {
             System.out.println("Invalid Input");
         }
         return lp;
+    }
+
+    public LPCopy getLpCopy() {
+        return lpCopy;
+    }
+
+    public void setLpCopy(LPCopy lpCopy) {
+        this.lpCopy = lpCopy;
+    }
+
+    public LPCopy createNewLPCopyMenu(){
+        String title = null;
+        String publicationDate = null;
+        String artist = null;
+        int barcode = 0;
+        int serialNumber = 0;
+        boolean state = false;
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter LP's title:");
+            title = scanner.next();
+            System.out.println("Enter LP's publication date:");
+            publicationDate = scanner.next();
+            System.out.println("Enter LP's artist:");
+            artist = scanner.next();
+            System.out.println("Enter LP's barcode:");
+            barcode = scanner.nextInt();
+            System.out.println("Enter LP's serial number:");
+            serialNumber = scanner.nextInt();
+            System.out.println("Enter LP's state:");
+            state = scanner.nextBoolean();
+
+            lpCopy = new LPCopy(title, publicationDate, artist, barcode, serialNumber, state);
+            lpCopyContainer.addLPCopy(lpCopy);
+        }catch (InputMismatchException e){
+            System.out.println("Invalid Input");
+        }
+        return lpCopy;
     }
 }
