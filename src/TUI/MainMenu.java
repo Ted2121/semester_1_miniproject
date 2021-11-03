@@ -45,40 +45,56 @@ public class MainMenu {
 
     // TODO make sure all branches are implemented
     private int writeMainMenu() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("****** Main menu ******");
-        System.out.println(" (1) Borrow menu");
-        System.out.println(" (2) Return menu");
-        System.out.println(" (3) LP Catalog");
-        System.out.println(" (9) Generate testdata");// will generate testdata, delete in final version
-        System.out.println(" (0) Quit the program");
-        System.out.print("\n Choice:");
+        int choice = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("****** Main menu ******");
+            System.out.println(" (1) Borrow menu");
+            System.out.println(" (2) Return menu");
+            System.out.println(" (3) LP Catalog");
+            System.out.println(" (9) Generate testdata");// will generate testdata, delete in final version
+            System.out.println(" (0) Quit the program");
+            System.out.print("\n Choice:");
 
-        while (!scanner.hasNextInt()) {
-            System.out.println("Input must be a number - please try again");
-            writeMainMenu();
+            while (!scanner.hasNextInt()) {
+                System.out.println("Input must be a number - please try again");
+                writeMainMenu();
+            }
+            choice = scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
         }
-        int choice = scanner.nextInt();
         return choice;
     }
 
     private String inputPersonNameMenu(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please insert name: ");
-        String answer = scanner.next();
+        String answer = null;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please insert name: ");
+            answer = scanner.next();
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
         return answer;
     }
 
     private int inputPersonPhoneNumberMenu(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please insert phone number: ");
-        int answer = scanner.nextInt();
+        int answer = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please insert phone number: ");
+            answer = scanner.nextInt();
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
         return answer;
     }
 
     private int writeFindingPersonMenu(){
         int choice = 0;
-        try{Scanner scanner = new Scanner(System.in);
+        try{
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome! Press: ");
         System.out.println(" (1) To find a person by name");
         System.out.println(" (2) To find a person by phone number");

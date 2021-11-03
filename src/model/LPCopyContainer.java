@@ -18,14 +18,40 @@ public class LPCopyContainer {
         return instance;
     }
 
+    // part of CRUD
+    public void deleteLPCopy(LPCopy lpCopy){
+        lpCopies.remove(lpCopy);
+    }
+
     public ArrayList<LPCopy> getLpCopies() {
         return lpCopies;
     }
 
-    // part of CRUD LP
+    //TODO fix these
+    // part of CRUD LPCopy
     public void addLPCopy(LPCopy lpCopy)
     {
         lpCopies.add(lpCopy);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyTitle(LPCopy lpCopy, String newTitle){
+        lpCopy.setTitle(newTitle);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyBarcode(LPCopy lpCopy, int newBarcode){
+        lpCopy.setBarcode(newBarcode);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyArtist(LPCopy lpCopy, String newArtist){
+        lpCopy.setArtist(newArtist);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyPublicationDate(LPCopy lpCopy, String newPublicationDate){
+        lpCopy.setPublicationDate(newPublicationDate);
     }
 
     public void getInfo(){

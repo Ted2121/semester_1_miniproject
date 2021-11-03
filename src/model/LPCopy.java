@@ -13,6 +13,8 @@ public class LPCopy extends LP{
         this.state = state;
     }
 
+
+
     public int getSerialNumber() {
         return serialNumber;
     }

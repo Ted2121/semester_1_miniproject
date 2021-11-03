@@ -23,16 +23,12 @@ public class PersonController {
 
     // TODO garbage?
     // gets called after an LP is returned
-    public void deletePerson(Person person){
-        personContainer.deletePerson(person);
-    }
 
     // TODO garbage?
     // for populating the containers
 //    public void addPerson(Person person) {
 //        personContainer.addPerson(person);
 //    }
-
 
     // this method will get a Person object from the method with the same name in model.PersonContainer
     // (searches for a Person object that matches the name argument)
@@ -94,7 +90,6 @@ return person;
         return person;
     }
 
-
     private String tryAgain(){
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.next();
@@ -116,6 +111,36 @@ return person;
         int phoneNumber = scanner.nextInt();
 
         return addPerson(newName, address, postalCode, city, phoneNumber);
+    }
+
+    // part of CRUD Person
+    public void updatePersonName(Person person, String name){
+        personContainer.updatePersonName(person, name);
+    }
+
+    // part of CRUD Person
+    public void updatePersonAddress(Person person, String address){
+        personContainer.updatePersonAddress(person, address);
+    }
+
+    // part of CRUD Person
+    public void updatePersonPostalCode(Person person, int postalCode){
+        personContainer.updatePersonPostalCode(person, postalCode);
+    }
+
+    // part of CRUD Person
+    public void updatePersonCity(Person person, String city){
+        personContainer.updatePersonCity(person, city);
+    }
+
+    // part of CRUD Person
+    public void updatePersonPhoneNumber(Person person, int phoneNumber){
+        personContainer.updatePersonPhoneNumber(person, phoneNumber);
+    }
+
+    // part of CRUD Person
+    public void deletePerson(Person person){
+        personContainer.deletePerson(person);
     }
 
 }

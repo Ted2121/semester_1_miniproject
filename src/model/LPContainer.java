@@ -19,9 +19,34 @@ public class LPContainer {
         return instance;
     }
 
+    // part of CRUD
+    public void deleteLP(LP lp){
+        lps.remove(lp);
+    }
+
     // part of CRUD LP
     public void addLP(LP lp){
         lps.add(lp);
+    }
+
+    // part of CRUD LP
+    public void updateLPTitle(LP lp, String newTitle){
+        lp.setTitle(newTitle);
+    }
+
+    // part of CRUD LP
+    public void updateLPBarcode(LP lp, int newBarcode){
+        lp.setBarcode(newBarcode);
+    }
+
+    // part of CRUD LP
+    public void updateLPArtist(LP lp, String newArtist){
+        lp.setArtist(newArtist);
+    }
+
+    // part of CRUD LP
+    public void updateLPPublicationDate(LP lp, String newPublicationDate){
+        lp.setPublicationDate(newPublicationDate);
     }
 
     public void getInfo(){

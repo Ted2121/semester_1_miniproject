@@ -63,6 +63,56 @@ public class LPController {
         return LPs;
     }
 
+    // part of CRUD LP
+    public void updateLPTitle(LP lp, String title){
+        lpContainer.updateLPTitle(lp, title);
+    }
+
+    // part of CRUD LP
+    public void updateLPBarcode(LP lp, int newBarcode){
+        lpContainer.updateLPBarcode(lp, newBarcode);
+    }
+
+    // part of CRUD LP
+    public void updateLPArtist(LP lp, String newArtist){
+        lpContainer.updateLPArtist(lp, newArtist);
+    }
+
+    // part of CRUD LP
+    public void updateLPPublicationDate(LP lp, String newPublicationDate){
+        lpContainer.updateLPPublicationDate(lp, newPublicationDate);
+    }
+
+    // part of CRUD LP
+    public void deleteLP(LP lp){
+        lpContainer.deleteLP(lp);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyTitle(LPCopy lpCopy, String newTitle){
+        lpCopyContainer.updateLPCopyTitle(lpCopy, newTitle);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyBarcode(LPCopy lpCopy, int newBarcode){
+        lpCopyContainer.updateLPCopyBarcode(lpCopy, newBarcode);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyArtist(LPCopy lpCopy, String newArtist){
+        lpCopyContainer.updateLPCopyArtist(lpCopy, newArtist);
+    }
+
+    // part of CRUD LPCopy
+    public void updateLPCopyPublicationDate(LPCopy lpCopy, String newPublicationDate){
+        lpCopyContainer.updateLPCopyPublicationDate(lpCopy, newPublicationDate);
+    }
+
+    // part of CRUD LPCopy
+    public void deleteLPCopy(LPCopy lpCopy){
+        lpCopyContainer.deleteLPCopy(lpCopy);
+    }
+
     public String getLPTitleToString(LP lp){
         return lp.TitleToString();
     }

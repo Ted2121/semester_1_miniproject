@@ -25,6 +25,7 @@ public class PersonContainer {
         persons.add(person);
     }
 
+    // part of CRUD Person
     public void deletePerson(Person person) {
         persons.remove(person);
     }
@@ -65,6 +66,31 @@ public class PersonContainer {
         else{
 
             return null;}
+    }
+
+    // part of CRUD Person
+    public void updatePersonName(Person person, String name){
+        person.setName(name);
+    }
+
+    // part of CRUD Person
+    public void updatePersonAddress(Person person, String address){
+        person.setAddress(address);
+    }
+
+    // part of CRUD Person
+    public void updatePersonPostalCode(Person person, int postalCode){
+        person.setPostalCode(postalCode);
+    }
+
+    // part of CRUD Person
+    public void updatePersonCity(Person person, String city){
+        person.setCity(city);
+    }
+
+    // part of CRUD Person
+    public void updatePersonPhoneNumber(Person person, int phoneNumber){
+        person.setPhoneNumber(phoneNumber);
     }
 
 }
