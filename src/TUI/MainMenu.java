@@ -55,14 +55,14 @@ public class MainMenu {
     // TODO make sure all branches are implemented
     private int writeMainMenu() {
         int choice = 0;
-        try {
+       try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("****** Main menu ******");
             System.out.println(" (1) Borrow menu");
             System.out.println(" (2) Return menu");
             System.out.println(" (3) LP Catalog");
             // TODO delete person by name, phone number etc - can use find person by x methods
-            System.out.println(" (4) Modify persons"); // will access the CRUD menu
+            System.out.println(" (4) Modify"); // will access the CRUD menu
             System.out.println(" (9) Generate testdata");
             System.out.println(" (0) Quit the program");
             System.out.print("\n Choice:");
@@ -77,6 +77,74 @@ public class MainMenu {
         }
         return choice;
     }
+
+    // this menu starts when option 4 is selected in the main menu
+    private int writeCrudMenu1(){
+
+        int choice = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(" (1) Modify persons");
+            System.out.println(" (2) Modify LPs");
+            System.out.println(" (3) Modify LP Copies");
+            System.out.println(" (4) Back");
+            choice = scanner.nextInt();
+            return choice;
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+        return choice;
+    }
+
+    // TODO finish this
+    private void crudMenu1(){
+        boolean running = true;
+        int choice = writeCrudMenu1();
+        while (running){
+        switch (choice) {
+            case 1 -> System.out.println("placeholder");
+            case 4 -> {
+                running = false;
+                mainMenu();
+            }
+        }
+        }
+
+    }
+
+    private int writeCrudPersonMenu(){
+        int choice = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(" (1) Create person");
+            System.out.println(" (2) View persons list");
+            System.out.println(" (3) Change personal information");
+            System.out.println(" (4) Delete person");
+            System.out.println(" (5) Back");
+            choice = scanner.nextInt();
+            return choice;
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+        return choice;
+    }
+
+    // TODO write this one
+    private void crudPersonMenu(){
+        boolean running = true;
+        int choice = writeCrudMenu1();
+        while (running){
+            switch (choice) {
+                case 1 -> System.out.println("placeholder");
+                case 4 -> {
+                    running = false;
+                    mainMenu();
+                }
+            }
+        }
+
+    }
+
 
     private String inputPersonNameMenu(){
         String answer = null;
