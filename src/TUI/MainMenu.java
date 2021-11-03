@@ -42,8 +42,9 @@ public class MainMenu {
             int choice = writeMainMenu();
             switch (choice) {
                 case 1 -> borrowMenu.start();
-                case 2 -> System.out.println(" Not implemented yet");
-                case 3 -> borrowMenu.lpCatalog();
+                case 2 -> System.out.println("TBI");
+                case 3 -> {borrowMenu.lpCatalog();
+                        mainMenu();}
                 case 4 -> crudMenu1();
                 case 9 -> System.out.println(" Not implemented yet");
                 case 0 -> {
@@ -64,7 +65,6 @@ public class MainMenu {
             System.out.println(" (1) Borrow menu");
             System.out.println(" (2) Return menu");
             System.out.println(" (3) LP Catalog");
-            // TODO delete person by name, phone number etc - can use find person by x methods
             System.out.println(" (4) Modify"); // will access the CRUD menu
             System.out.println(" (9) Generate testdata");
             System.out.println(" (0) Quit the program");
@@ -247,7 +247,7 @@ public class MainMenu {
 
 
     private void crudLPMenu(){
-        boolean running = true;
+
         int choice = writeCrudLPMenu();
 
             switch (choice) {

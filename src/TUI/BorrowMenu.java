@@ -31,7 +31,7 @@ public class BorrowMenu {
         while (running) {
             int choice1 = writeLoanMenu();
             switch (choice1) {
-                // TODO implement more menus
+
                 case 1 -> {
                     int choice2 = lpCatalog();
 

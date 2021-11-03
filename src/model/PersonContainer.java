@@ -68,24 +68,6 @@ public class PersonContainer {
         return person;
     }
 
-//    LPCopy lpCopy = null;
-//    boolean found = false;
-//    int i = 0;
-//        while (!found && i < lpCopies.size()) {
-//        if (lpCopies.get(i).getSerialNumber() == serialNumber) {
-//            System.out.println("Test" + lpCopies.get(i));
-//            lpCopy = lpCopies.get(i);
-//            found = true;
-//            return lpCopy;
-//        } else {
-//            i++;
-//
-//        }
-//
-//    }
-//        return lpCopy;
-//}
-
     // part of CRUD Person
     public void updatePersonName(Person person, String name){
         person.setName(name);

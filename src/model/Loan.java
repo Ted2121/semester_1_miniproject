@@ -2,13 +2,14 @@ package model;
 
 import TUI.MainMenu;
 
+import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 
 public class Loan {
     // TODO id gets incremented for every new order
     private int id;
-    private String borrowDate;
+    private LocalDate borrowDate;
     private String returnDate;
     // used a constant for the lending period
     private static final Period PERIOD = Period.ofDays(14);
@@ -60,7 +61,7 @@ public class Loan {
         this.id = id;
     }
 
-    public void setBorrowDate(String borrowDate) {
+    public void setBorrowDate(LocalDate borrowDate) {
         this.borrowDate = borrowDate;
     }
 
