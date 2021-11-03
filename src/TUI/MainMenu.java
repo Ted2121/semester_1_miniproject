@@ -117,6 +117,7 @@ public class MainMenu {
 
     }
 
+    // crud person is working as intended
     private int writeCrudPersonMenu(){
         int choice = 0;
         try {
@@ -134,7 +135,6 @@ public class MainMenu {
         return choice;
     }
 
-    // TODO finish the menu
     private void crudPersonMenu(){
 
 //        boolean running = true;
@@ -252,13 +252,93 @@ public class MainMenu {
         int choice = writeCrudMenu1();
         while (running){
             switch (choice) {
-                case 1 -> System.out.println("placeholder");
+                case 1 -> lpController.createNewLPMenu();
                 case 2 -> lpCatalogDisplay();
+                case 3 -> lpCatalogDisplay();
                 case 4 -> {
                     running = false;
                     mainMenu();
                 }
             }
+        }
+
+    }
+
+    private void changeLPInformationMenu(){
+        String newTitle = null;
+        String newArtist = null;
+        int newBarcode = 0;
+        String newPublicationDate = null;
+
+
+        findingLPMenu();
+        lpController.setLp(lpController.getLPByTitle(lpTitleToChange));
+
+        int choice = writeChangeLPInformationMenu();
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+            switch (choice) {
+                case 1 -> {
+                    System.out.println("Enter new title:");
+                    newTitle = scanner.next();
+                    personController.updatePersonName(personController.getPerson(), newName);
+                }
+                case 2 -> {
+                    System.out.println("Enter new artist:");
+                    newArtist = scanner.next();
+                    personController.updatePersonAddress(personController.getPerson(), newAddress);
+                }
+                case 3 -> {
+                    System.out.println("Enter new postal code:");
+                    newPublicationDate = scanner.next();
+                    personController.updatePersonPostalCode(personController.getPerson(), newPostalCode);
+                }
+                case 4 -> {
+                    System.out.println("Enter new city:");
+                    newBarcode = scanner.nextInt();
+                    personController.updatePersonCity(personController.getPerson(), newCity);
+                }
+                case 5 -> crudLPMenu();
+                default -> System.exit(0);
+            }
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+    }
+
+    private int writeChangeLPInformationMenu(){
+        int choice = 0;
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println(" (1) Change title");
+            System.out.println(" (2) Change artist");
+            System.out.println(" (3) Change publication date");
+            System.out.println(" (4) Change barcode");
+            System.out.println(" (6) Back");
+            choice = scanner.nextInt();
+            return choice;
+
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+
+        return choice;
+    }
+
+
+
+    private void findingLPMenu() {
+
+        try{
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter LP's name:");
+            lpTitleToChange = scanner.next();
+            System.out.println("TESTING " + lpTitleToChange);
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input");
         }
 
     }

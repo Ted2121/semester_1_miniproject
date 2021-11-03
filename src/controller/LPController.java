@@ -3,15 +3,20 @@ package controller;
 import model.*;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class LPController {
 
     private LPCopyContainer lpCopyContainer;
     private LPContainer lpContainer;
+    private PersonContainer personContainer;
+    private LP lp;
 
     public LPController(){
         lpCopyContainer = LPCopyContainer.getInstance();
         lpContainer = LPContainer.getInstance();
+        personContainer = PersonContainer.getInstance();
     }
 
     // adding a new LPCopy using closed architecture
@@ -19,16 +24,60 @@ public class LPController {
         lpCopyContainer.addLPCopy(new LPCopy(title, publicationDate, artist, barcode, serialNumber, state));
     }
 
-    // adding a new LP using closed architecture
+//     adding a new LP using closed architecture
     public void addLP(String title, String publicationDate, String artist, int barcode){
         lpContainer.addLP(new LP(title, publicationDate, artist, barcode));
 
+    }
+
+    public LP addAndReturnLP(String title, String publicationDate, String artist, int barcode){
+        lp = new LP(title, publicationDate, artist, barcode);
+        lpContainer.addLP(lp);
+        return lp;
     }
 
     public LPCopyContainer getLpCopyContainer() {
         return lpCopyContainer;
     }
 
+    public LP getLPByTitle(String title){
+        LP lp = lpContainer.getLPByTitle(title);
+        if(lp == null){
+            System.err.println("LP not in the database");
+            System.out.println("Would you like to add a new LP?");
+            Scanner scanner = new Scanner(System.in);
+            String answer1 = scanner.next();
+            switch (answer1){
+                case "yes", "Yes" -> {
+                    lp = createNewLPMenu();
+                    return lp;
+                }
+                default -> {
+
+                    String answer2 = tryAgain();
+                    switch (answer2){
+                        case "yes", "Yes" -> getLPByTitle(title);
+                        default -> System.exit(0);
+                    }
+                }
+            }
+        }
+        return lp;
+    }
+
+    public LP getLp() {
+        return lp;
+    }
+
+    public void setLp(LP lp) {
+        this.lp = lp;
+    }
+
+    public String tryAgain(){
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.next();
+        return answer;
+    }
     // TODO garbage?
     // for populating the containers
 //    public void addLPCopy(LPCopy lpCopy) {
@@ -119,5 +168,31 @@ public class LPController {
 
     public String getLPTitleToString(LP lp){
         return lp.TitleToString();
+    }
+
+    public LP createNewLPMenu(){
+       String title = null;
+       String publicationDate = null;
+       String artist = null;
+       int barcode = 0;
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter LP's title:");
+            title = scanner.next();
+            System.out.println("Enter LP's publication date:");
+            publicationDate = scanner.next();
+            System.out.println("Enter LP's artist:");
+            artist = scanner.next();
+            System.out.println("Enter LP's barcode:");
+            barcode = scanner.nextInt();
+
+
+            lp = new LP(title, publicationDate, artist, barcode);
+            lpContainer.addLP(lp);
+        }catch (InputMismatchException e){
+            System.out.println("Invalid Input");
+        }
+        return lp;
     }
 }

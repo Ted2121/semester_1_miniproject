@@ -99,7 +99,7 @@ return person;
         return person;
     }
 
-    private String tryAgain(){
+    public String tryAgain(){
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.next();
         return answer;

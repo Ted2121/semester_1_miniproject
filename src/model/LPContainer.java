@@ -63,4 +63,20 @@ public class LPContainer {
     public ArrayList<LP> getLps() {
         return lps;
     }
+
+    public LP getLPByTitle(String title) {
+        boolean found = false;
+        int i = 0;
+        while(!found && i<lps.size()){
+            if(lps.get(i).getTitle().equals(title))
+                found = true;
+            else
+                i++;
+        }
+        if(found)
+            return lps.get(i);
+        else{
+
+            return null;}
+    }
 }

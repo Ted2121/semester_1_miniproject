@@ -87,4 +87,20 @@ public class LPCopyContainer {
     public void setCopyState(LPCopy lpCopy, boolean state){
         lpCopy.setState(state);
     }
+
+    public LP getLPCopyByTitle(String title) {
+        boolean found = false;
+        int i = 0;
+        while(!found && i<lpCopies.size()){
+            if(lpCopies.get(i).getTitle().equals(title))
+                found = true;
+            else
+                i++;
+        }
+        if(found)
+            return lpCopies.get(i);
+        else{
+
+            return null;}
+    }
 }
