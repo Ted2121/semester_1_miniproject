@@ -42,6 +42,11 @@ public class LoanController {
         loan.setPerson(person);
     }
 
+    public void setLoanLPCopyAndPerson(Loan loan, LPCopy lpCopy, Person person){
+        loan.setPerson(person);
+        loan.setLpCopy(lpCopy);
+    }
+
     public String getInfo(Loan loan){
         return loan.toString();
     }

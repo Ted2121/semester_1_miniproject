@@ -86,6 +86,8 @@ public class Loan {
         this.lpCopy = lpCopy;
     }
 
+
+
     @Override
     public String toString() {
         return "Loan " + id + "\n" +
