@@ -4,19 +4,22 @@ package controller;
 
 import model.*;
 
+import java.time.LocalDate;
+
 public class LoanController {
     private LoanContainer loanContainer;
+
     Loan loan;
 
     public LoanController(){
         loanContainer = LoanContainer.getInstance();
     }
 
-    public void createLoan(int loanNumber, String borrowDate, Person person, LPCopy lpCopy){
+    public void createLoan(int loanNumber, LocalDate borrowDate, Person person, LPCopy lpCopy){
         loanContainer.createLoan(new Loan(loanNumber, borrowDate, person, lpCopy));
     }
 
-    public Loan createLoan(int id, String borrowDate){
+    public Loan createLoan(int id, LocalDate borrowDate){
         this.loan = new Loan(id, borrowDate);
         loan.setId(id);
         loanContainer.createLoan(loan);
@@ -44,13 +47,25 @@ public class LoanController {
 
     //testing something
 
+    public void setBorrowDate(Loan loan){
+        loanContainer.setBorrowDate(loan, LocalDate.now());
+    }
 
 
+    public LocalDate getBorrowDate(Loan loan){
+       LocalDate localDate =  loanContainer.getBorrowDate(loan);
+       return localDate;
+    }
 
     public void setLoanLPCopyAndPerson(Loan loan, LPCopy lpCopy, Person person){
         loan.setPerson(person);
         loan.setLpCopy(lpCopy);
+        loanContainer.setReturnDate(loan, loanContainer.getBorrowDate(loan).plusDays(14));
     }
+
+//    public void setReturnDate(Loan loan){
+//        loanContainer.setReturnDate(loan, loanContainer.getBorrowDate(loan).plusDays(14));
+//    }
 
     public String getInfo(Loan loan){
         return loan.toString();

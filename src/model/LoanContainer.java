@@ -29,6 +29,10 @@ public class LoanContainer {
         loans.add(loan);
     }
 
+    public void setReturnDate(Loan loan, LocalDate returnDate){
+        loan.setReturnDate(returnDate);
+    }
+
     public void deleteLoan(Loan loan){
         loans.remove(loan);
     }
@@ -38,4 +42,8 @@ public class LoanContainer {
         loans.forEach(loan -> System.out.println(loan));
     }
 
+    public LocalDate getBorrowDate(Loan loan) {
+        LocalDate localDate = loan.getBorrowDate();
+        return localDate;
+    }
 }

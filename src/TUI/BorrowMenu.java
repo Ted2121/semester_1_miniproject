@@ -3,8 +3,8 @@ package TUI;
 import controller.LPController;
 import controller.LoanController;
 import controller.PersonController;
-import model.LP;
 
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -40,11 +40,12 @@ public class BorrowMenu {
                     // LPCopy available that matches the title of the LP that
                     // the user chose by inputting an integer for choice2
 
-                    loanController.setLoanLPCopyAndPerson(loanController.createLoan(id, "PLACEHOLDER.DATE"),
+                    loanController.setLoanLPCopyAndPerson(loanController.createLoan(id, LocalDate.now()),
                             lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
-                                    lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1))),
+                                    lpController.getLPTitleToString((model.LP) lpController.getLPs().get(choice2 - 1))),
                             personController.getPersonByName(MainMenu.getPersonName()));
-                    System.out.println( "TEST" + lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1)));
+                    System.out.println( "TEST" + lpController.getLPTitleToString((model.LP) lpController.getLPs().get(choice2 - 1)));
+
                     System.out.println(loanController.getInfo(loanController.getLoan()));
                     id++;
 
