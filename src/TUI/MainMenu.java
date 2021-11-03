@@ -3,6 +3,7 @@ package TUI;
 import controller.LPController;
 import controller.LoanController;
 import controller.PersonController;
+import model.Person;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,10 +14,11 @@ public class MainMenu {
     private LoanController loanController;
     private PersonController personController;
     private static String personName;
-    private static String personNameToDelete;
-    private static int personPhoneNumberToDelete;
-    private static String lpTitleToDelete;
-    private static String lpCopySerialNumberToDelete;
+    private static int personNumber;
+    private static String personNameToChange;
+    private static int personPhoneNumberToChange;
+    private static String lpTitleToChange;
+    private static String lpCopySerialNumberToChange;
 
     public static String getPersonName() {
         return personName;
@@ -138,7 +140,9 @@ public class MainMenu {
         int choice = writeCrudMenu1();
         while (running){
             switch (choice) {
-                case 1 -> System.out.println("placeholder");
+                case 1 -> personController.createNewPersonText();
+                case 2 -> personController.getInfo();
+                case 3 ->
                 case 4 -> {
                     running = false;
                     mainMenu();
@@ -147,6 +151,73 @@ public class MainMenu {
         }
 
     }
+
+    private int writeChangePersonalInformationMenu(){
+       // findingPersonMenu();
+    int choice = 0;
+
+    try {
+    Scanner scanner = new Scanner(System.in);
+
+        System.out.println(" (1) Change name");
+        System.out.println(" (2) Change address");
+        System.out.println(" (3) Change postal code");
+        System.out.println(" (4) Change city");
+        System.out.println(" (5) Change phone number");
+        System.out.println(" (6) Back");
+        choice = scanner.nextInt();
+    return choice;
+
+    } catch (InputMismatchException e){
+    System.out.println("Invalid input");
+    }
+
+    return choice;
+
+    }
+
+    private void changePersonalInformationMenu() {
+        String newName = null;
+        String newAddress = null;
+        int newPostalCode = 0;
+        String newCirt = null;
+        int newPhoneNumber = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        findingPersonMenu();
+        Person personToModify = personController.getPersonByName(personNameToChange);
+        int choice = writeChangePersonalInformationMenu();
+
+        try {
+            switch (choice) {
+                case 1 -> {
+                    System.out.println("Enter new name:");
+                    newName = scanner.next();
+                    personToModify.setName(newName);
+                }
+                case 2 -> {
+                    System.out.println("Enter new address:");
+                    newAddress = scanner.next();
+                    personToModify.setAddress(newAddress);
+                }
+                case 3 -> {
+                    System.out.println("Enter new postal code:");
+                    newPostalCode = scanner.nextInt();
+                    personToModify.setPostalCode(newPostalCode);
+                }
+                case 4 -> {
+                    System.out.println("Enter new postal code:");
+                    newPostalCode = scanner.nextInt();
+                    personToModify.setPostalCode(newPostalCode);
+                }
+            }
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+
+        }
+
+
 
     private int writeCrudLPMenu(){
 
@@ -174,7 +245,7 @@ public class MainMenu {
         while (running){
             switch (choice) {
                 case 1 -> System.out.println("placeholder");
-                case 2 -> borrowMenu.lpCatalogDisplay();
+                case 2 -> lpCatalogDisplay();
                 case 4 -> {
                     running = false;
                     mainMenu();
@@ -210,7 +281,7 @@ public class MainMenu {
         while (running){
             switch (choice) {
                 case 1 -> System.out.println("placeholder");
-                case 2 -> borrowMenu.lpCopyCatalogDisplay();
+                case 2 -> lpCopyCatalogDisplay();
                 case 4 -> {
                     running = false;
                     mainMenu();
@@ -220,7 +291,18 @@ public class MainMenu {
 
     }
 
+    // this method only displays the catalog - different from the one in borrow menu that also takes user input
+    public void lpCatalogDisplay(){
+        System.out.println("****** LP Catalog ******");
+        lpController.getLPInfo();
+    }
 
+    // this method only displays the catalog - different from the one in borrow menu that also takes user input
+    public void lpCopyCatalogDisplay(){
+        System.out.println("****** LP Copy Catalog ******");
+        lpController.getLPCopyInfo();
+
+    }
 
     private String inputPersonNameMenu(){
         String answer = null;
@@ -230,6 +312,7 @@ public class MainMenu {
 
             answer = scanner.next();
             personName = answer;
+            personNameToChange = answer;
         }catch (InputMismatchException e){
             System.out.println("Invalid input");
         }
@@ -247,6 +330,8 @@ public class MainMenu {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Please insert phone number: ");
             answer = scanner.nextInt();
+            personNumber = answer;
+            personPhoneNumberToChange = answer;
         }catch (InputMismatchException e){
             System.out.println("Invalid input");
         }

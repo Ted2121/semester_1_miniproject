@@ -77,16 +77,6 @@ public class BorrowMenu {
         return getIntegerFromUser();
     }
 
-    public void lpCatalogDisplay(){
-        System.out.println("****** LP Catalog ******");
-        lpController.getLPInfo();
-    }
-
-    public void lpCopyCatalogDisplay(){
-        System.out.println("****** LP Copy Catalog ******");
-        lpController.getLPCopyInfo();
-
-    }
 
     private int getIntegerFromUser(){
         int choice = 0;

@@ -114,6 +114,10 @@ return person;
         return addPerson(newName, address, postalCode, city, phoneNumber);
     }
 
+    public void getInfo(){
+        personContainer.getInfo();
+    }
+
     // part of CRUD Person
     public void updatePersonName(Person person, String name){
         personContainer.updatePersonName(person, name);
