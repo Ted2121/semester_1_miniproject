@@ -54,7 +54,7 @@ public class BorrowMenu {
                 default -> {System.err.println("Wrong input");
                             running = false;}
 
-                // TODO test printLoans() method
+                // TODO not finished i think
             }
         }
     }
@@ -73,8 +73,19 @@ public class BorrowMenu {
 
     public int lpCatalog(){
         System.out.println("****** LP Catalog ******");
-        lpController.getInfo();
+        lpController.getLPInfo();
         return getIntegerFromUser();
+    }
+
+    public void lpCatalogDisplay(){
+        System.out.println("****** LP Catalog ******");
+        lpController.getLPInfo();
+    }
+
+    public void lpCopyCatalogDisplay(){
+        System.out.println("****** LP Copy Catalog ******");
+        lpController.getLPCopyInfo();
+
     }
 
     private int getIntegerFromUser(){

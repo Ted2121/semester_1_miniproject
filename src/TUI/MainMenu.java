@@ -96,13 +96,15 @@ public class MainMenu {
         return choice;
     }
 
-    // TODO finish this
+
     private void crudMenu1(){
         boolean running = true;
         int choice = writeCrudMenu1();
         while (running){
         switch (choice) {
-            case 1 -> System.out.println("placeholder");
+            case 1 -> crudPersonMenu();
+            case 2 -> crudLPMenu();
+            case 3 -> crudLPCopyMenu();
             case 4 -> {
                 running = false;
                 mainMenu();
@@ -129,8 +131,9 @@ public class MainMenu {
         return choice;
     }
 
-    // TODO write this one
+    // TODO finish the menu
     private void crudPersonMenu(){
+        writeCrudPersonMenu();
         boolean running = true;
         int choice = writeCrudMenu1();
         while (running){
@@ -144,6 +147,79 @@ public class MainMenu {
         }
 
     }
+
+    private int writeCrudLPMenu(){
+
+        int choice = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(" (1) Create LP");
+            System.out.println(" (2) View LPs");
+            System.out.println(" (3) Change LP information");
+            System.out.println(" (4) Delete LP");
+            System.out.println(" (5) Back");
+            choice = scanner.nextInt();
+            return choice;
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+        return choice;
+    }
+
+    // TODO finish the menu
+    private void crudLPMenu(){
+        writeCrudLPMenu();
+        boolean running = true;
+        int choice = writeCrudMenu1();
+        while (running){
+            switch (choice) {
+                case 1 -> System.out.println("placeholder");
+                case 2 -> borrowMenu.lpCatalogDisplay();
+                case 4 -> {
+                    running = false;
+                    mainMenu();
+                }
+            }
+        }
+
+    }
+
+    private int writeCrudLPCOpyMenu(){
+
+        int choice = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(" (1) Create LP Copy");
+            System.out.println(" (2) View LP Copies");
+            System.out.println(" (3) Change LP Copy information");
+            System.out.println(" (4) Delete LP Copy");
+            System.out.println(" (5) Back");
+            choice = scanner.nextInt();
+            return choice;
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
+        }
+        return choice;
+    }
+
+    // TODO finish the menu
+    private void crudLPCopyMenu(){
+        writeCrudLPCOpyMenu();
+        boolean running = true;
+        int choice = writeCrudMenu1();
+        while (running){
+            switch (choice) {
+                case 1 -> System.out.println("placeholder");
+                case 2 -> borrowMenu.lpCopyCatalogDisplay();
+                case 4 -> {
+                    running = false;
+                    mainMenu();
+                }
+            }
+        }
+
+    }
+
 
 
     private String inputPersonNameMenu(){

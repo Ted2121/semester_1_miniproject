@@ -43,8 +43,12 @@ public class LPController {
 //    }
 
     // getting info using closed architecture
-    public void getInfo(){
+    public void getLPInfo(){
         lpContainer.getInfo();
+    }
+
+    public void getLPCopyInfo(){
+        lpCopyContainer.getInfo();
     }
 
     // accessing getFirstCopyAvail of model.LPCopyContainer

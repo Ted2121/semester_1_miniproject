@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class LPCopyContainer {
 
@@ -54,9 +55,20 @@ public class LPCopyContainer {
         lpCopy.setPublicationDate(newPublicationDate);
     }
 
+//    public void getInfo(){
+//        // used lambda to print each LPCopy
+//        lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
+//    }
+
     public void getInfo(){
-        // used lambda to print each LPCopy
-        lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
+        // used atomic number to be able to increment in lambda
+        AtomicInteger i = new AtomicInteger(1);
+        // used lambda to print each LP
+        lpCopies.forEach(lpCopy -> {
+            System.out.print("(" + i.getAndIncrement() + ") ");
+            System.out.println(lpCopy);
+        });
+
     }
 
     public LPCopy getFirstCopyAvail(ArrayList lpCopies, String title){
