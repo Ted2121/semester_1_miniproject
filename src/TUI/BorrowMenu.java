@@ -5,6 +5,7 @@ import controller.LoanController;
 import controller.PersonController;
 import model.LP;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BorrowMenu {
@@ -46,6 +47,7 @@ public class BorrowMenu {
                     id++;
 
                 }
+                case 2 -> loanController.printLoans();
                 case 0 -> running = false;
                 default -> {System.err.println("Wrong input");
                             running = false;}
@@ -56,28 +58,31 @@ public class BorrowMenu {
     }
 
     private int writeLoanMenu() {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("****** Borrow menu ******");
         System.out.println(" (1) Create loan");
+        System.out.println(" (2) Show current loans");
         System.out.println(" (0) Back");
         System.out.print("\n Choice:");
-        return getIntegerFromUser(scanner);
+        return getIntegerFromUser();
     }
 
     public int lpCatalog(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("****** LP Catalog ******");
         lpController.getInfo();
-        return getIntegerFromUser(scanner);
+        return getIntegerFromUser();
     }
 
-    private int getIntegerFromUser(Scanner scanner) {
-        while (!scanner.hasNextInt()) {
-            System.out.println("Input must be a number - please try again");
-            // recursive call for trying again
-           getIntegerFromUser(scanner);
+    private int getIntegerFromUser(){
+        int choice = 0;
+        try{
+            Scanner scanner = new Scanner(System.in);
+          choice = scanner.nextInt();
+          return choice;
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input");
         }
-        return scanner.nextInt();
+        return choice;
     }
 
 
