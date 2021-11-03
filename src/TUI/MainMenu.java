@@ -193,12 +193,12 @@ public class MainMenu {
             switch (choice) {
                 case 1 -> {
                     System.out.println("Enter new name:");
-                    newName = scanner.next();
+                    newName = scanner.nextLine();
                     personController.updatePersonName(personController.getPerson(), newName);
                 }
                 case 2 -> {
                     System.out.println("Enter new address:");
-                    newAddress = scanner.next();
+                    newAddress = scanner.nextLine();
                     personController.updatePersonAddress(personController.getPerson(), newAddress);
                 }
                 case 3 -> {
@@ -208,7 +208,7 @@ public class MainMenu {
                 }
                 case 4 -> {
                     System.out.println("Enter new city:");
-                    newCity = scanner.next();
+                    newCity = scanner.nextLine();
                     personController.updatePersonCity(personController.getPerson(), newCity);
                 }
                 case 5 -> {
@@ -247,20 +247,17 @@ public class MainMenu {
 
     // TODO finish the menu
     private void crudLPMenu(){
-        writeCrudLPMenu();
         boolean running = true;
-        int choice = writeCrudMenu1();
-        while (running){
+        int choice = writeCrudLPMenu();
+
             switch (choice) {
                 case 1 -> lpController.createNewLPMenu();
                 case 2 -> lpCatalogDisplay();
-                case 3 -> lpCatalogDisplay();
-                case 4 -> {
-                    running = false;
-                    mainMenu();
-                }
+                case 3 -> changeLPInformationMenu();
+                case 4 -> mainMenu();
+
             }
-        }
+
 
     }
 
@@ -281,23 +278,23 @@ public class MainMenu {
             switch (choice) {
                 case 1 -> {
                     System.out.println("Enter new title:");
-                    newTitle = scanner.next();
-                    personController.updatePersonName(personController.getPerson(), newName);
+                    newTitle = scanner.nextLine();
+                    lpController.updateLPTitle(lpController.getLp(), newTitle);
                 }
                 case 2 -> {
                     System.out.println("Enter new artist:");
-                    newArtist = scanner.next();
-                    personController.updatePersonAddress(personController.getPerson(), newAddress);
+                    newArtist = scanner.nextLine();
+                    lpController.updateLPArtist(lpController.getLp(), newArtist);
                 }
                 case 3 -> {
                     System.out.println("Enter new postal code:");
-                    newPublicationDate = scanner.next();
-                    personController.updatePersonPostalCode(personController.getPerson(), newPostalCode);
+                    newPublicationDate = scanner.nextLine();
+                    lpController.updateLPPublicationDate(lpController.getLp(), newPublicationDate);
                 }
                 case 4 -> {
                     System.out.println("Enter new city:");
                     newBarcode = scanner.nextInt();
-                    personController.updatePersonCity(personController.getPerson(), newCity);
+                    lpController.updateLPBarcode(lpController.getLp(), newBarcode);
                 }
                 case 5 -> crudLPMenu();
                 default -> System.exit(0);
@@ -334,8 +331,8 @@ public class MainMenu {
 
         try{
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter LP's name:");
-            lpTitleToChange = scanner.next();
+            System.out.println("Enter LP's title:");
+            lpTitleToChange = scanner.nextLine();
             System.out.println("TESTING " + lpTitleToChange);
         } catch (InputMismatchException e){
             System.out.println("Invalid input");
@@ -398,7 +395,7 @@ public class MainMenu {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Please insert name: ");
 
-            answer = scanner.next();
+            answer = scanner.nextLine();
             personName = answer;
             personNameToChange = answer;
         }catch (InputMismatchException e){
