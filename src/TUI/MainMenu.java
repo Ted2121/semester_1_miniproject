@@ -44,6 +44,7 @@ public class MainMenu {
                 case 1 -> borrowMenu.start();
                 case 2 -> System.out.println(" Not implemented yet");
                 case 3 -> borrowMenu.lpCatalog();
+                case 4 -> crudMenu1();
                 case 9 -> System.out.println(" Not implemented yet");
                 case 0 -> {
                     System.out.println(" Thank you and goodbye.");
@@ -135,20 +136,20 @@ public class MainMenu {
 
     // TODO finish the menu
     private void crudPersonMenu(){
-        writeCrudPersonMenu();
+
         boolean running = true;
-        int choice = writeCrudMenu1();
-        while (running){
+        int choice = writeCrudPersonMenu();
+
             switch (choice) {
                 case 1 -> personController.createNewPersonText();
                 case 2 -> personController.getInfo();
-                case 3 ->
+                case 3 -> changePersonalInformationMenu();
                 case 4 -> {
                     running = false;
                     mainMenu();
                 }
             }
-        }
+
 
     }
 
@@ -180,7 +181,7 @@ public class MainMenu {
         String newName = null;
         String newAddress = null;
         int newPostalCode = 0;
-        String newCirt = null;
+        String newCity = null;
         int newPhoneNumber = 0;
         Scanner scanner = new Scanner(System.in);
 
@@ -206,10 +207,17 @@ public class MainMenu {
                     personToModify.setPostalCode(newPostalCode);
                 }
                 case 4 -> {
-                    System.out.println("Enter new postal code:");
-                    newPostalCode = scanner.nextInt();
-                    personToModify.setPostalCode(newPostalCode);
+                    System.out.println("Enter new city:");
+                    newCity = scanner.next();
+                    personToModify.setCity(newCity);
                 }
+                case 5 -> {
+                    System.out.println("Enter new phone number:");
+                    newPhoneNumber = scanner.nextInt();
+                    personToModify.setPhoneNumber(newPhoneNumber);
+                }
+                case 6 -> crudPersonMenu();
+                default -> System.exit(0);
             }
         }catch (InputMismatchException e){
             System.out.println("Invalid input");
