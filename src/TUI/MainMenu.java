@@ -3,7 +3,7 @@ package TUI;
 import controller.LPController;
 import controller.LoanController;
 import controller.PersonController;
-//import model.Person;
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -194,27 +194,27 @@ public class MainMenu {
                 case 1 -> {
                     System.out.println("Enter new name:");
                     newName = scanner.next();
-                    personController.updatePersonName(con, newName);
+                    personController.updatePersonName(personController.getPerson(), newName);
                 }
                 case 2 -> {
                     System.out.println("Enter new address:");
                     newAddress = scanner.next();
-                    personController.updatePersonAddress(personToModify, newAddress);
+                    personController.updatePersonAddress(personController.getPerson(), newAddress);
                 }
                 case 3 -> {
                     System.out.println("Enter new postal code:");
                     newPostalCode = scanner.nextInt();
-                    personController.updatePersonPostalCode(personToModify, newPostalCode);
+                    personController.updatePersonPostalCode(personController.getPerson(), newPostalCode);
                 }
                 case 4 -> {
                     System.out.println("Enter new city:");
                     newCity = scanner.next();
-                    personController.updatePersonCity(personToModify, newCity);
+                    personController.updatePersonCity(personController.getPerson(), newCity);
                 }
                 case 5 -> {
                     System.out.println("Enter new phone number:");
                     newPhoneNumber = scanner.nextInt();
-                    personController.updatePersonPhoneNumber(personToModify, newPhoneNumber);
+                    personController.updatePersonPhoneNumber(personController.getPerson(), newPhoneNumber);
                 }
                 case 6 -> crudPersonMenu();
                 default -> System.exit(0);
