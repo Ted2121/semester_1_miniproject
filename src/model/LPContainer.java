@@ -74,9 +74,10 @@ public class LPContainer {
                 i++;
         }
         if(found)
+
             return lps.get(i);
         else{
-
+            System.out.println("Test " + lps.get(i));
             return null;}
     }
 }

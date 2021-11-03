@@ -474,7 +474,7 @@ public class MainMenu {
             System.out.println("Enter LP Copy's serial number:");
             lpCopySerialNumberToChange = scanner.nextInt();
           System.out.println("TESTING " + lpCopySerialNumberToChange);
-            System.out.println(lpController.getLPCopySerialNumber());
+
         } catch (InputMismatchException e){
             System.out.println("Invalid input");
         }

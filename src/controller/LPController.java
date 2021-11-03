@@ -68,7 +68,7 @@ public class LPController {
 
     public LPCopy getLPCopyBySerialNumber(int serialNumber){
         LPCopy lpCopy = lpCopyContainer.getLPCopyBySerialNumber(serialNumber);
-        if(lp == null){
+        if(lpCopy == null){
             System.err.println("LP Copy not in the database");
             System.out.println("Would you like to add a new LP Copy?");
             Scanner scanner = new Scanner(System.in);

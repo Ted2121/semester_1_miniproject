@@ -94,20 +94,24 @@ public class LPCopyContainer {
         lpCopy.setSerialNumber(serialNumber);
     }
 
+
     public LPCopy getLPCopyBySerialNumber(int serialNumber) {
+        LPCopy lpCopy = null;
         boolean found = false;
         int i = 0;
-        while(!found && i<lpCopies.size()){
-            if(lpCopies.get(i).getSerialNumber() == serialNumber)
+        while (!found && i < lpCopies.size()) {
+            if (lpCopies.get(i).getSerialNumber() == serialNumber) {
+                System.out.println("Test" + lpCopies.get(i));
+                lpCopy = lpCopies.get(i);
                 found = true;
-            else
+                return lpCopy;
+            } else {
                 i++;
+
+            }
+
         }
-        if(found)
-            return lpCopies.get(i);
-        else{
-            System.out.println(lpCopies.get(i));
-            return null;}
+        return lpCopy;
     }
 
     public int getLPCopySerialNumber(LPCopy lpCopy){
