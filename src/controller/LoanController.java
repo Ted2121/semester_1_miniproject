@@ -42,6 +42,11 @@ public class LoanController {
         loan.setPerson(person);
     }
 
+    //testing something
+
+
+
+
     public void setLoanLPCopyAndPerson(Loan loan, LPCopy lpCopy, Person person){
         loan.setPerson(person);
         loan.setLpCopy(lpCopy);
