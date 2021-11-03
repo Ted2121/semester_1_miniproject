@@ -39,7 +39,7 @@ public class BorrowMenu {
                     // this method call sets the LPCopy of the loan to the first
                     // LPCopy available that matches the title of the LP that
                     // the user chose by inputting an integer for choice2
-                    // TODO getNameFromInput method
+
                     loanController.setLoanLPCopyAndPerson(loanController.createLoan(id, "PLACEHOLDER.DATE"),
                             lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
                                     lpController.getLPTitleToString((LP) lpController.getLPs().get(choice2 - 1))),

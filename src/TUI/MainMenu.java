@@ -13,6 +13,10 @@ public class MainMenu {
     private LoanController loanController;
     private PersonController personController;
     private static String personName;
+    private static String personNameToDelete;
+    private static int personPhoneNumberToDelete;
+    private static String lpTitleToDelete;
+    private static String lpCopySerialNumberToDelete;
 
     public static String getPersonName() {
         return personName;
@@ -43,7 +47,7 @@ public class MainMenu {
                     System.out.println(" Thank you and goodbye.");
                     running = false;
                 }
-                default -> System.out.println(" Unknown error occured, choice = " + choice);
+                default -> System.out.println(" Unknown error occurred, choice = " + choice);
             }
         }
     }
@@ -57,7 +61,9 @@ public class MainMenu {
             System.out.println(" (1) Borrow menu");
             System.out.println(" (2) Return menu");
             System.out.println(" (3) LP Catalog");
-            System.out.println(" (9) Generate testdata");// will generate testdata, delete in final version
+            // TODO delete person by name, phone number etc - can use find person by x methods
+            System.out.println(" (4) Modify persons"); // will access the CRUD menu
+            System.out.println(" (9) Generate testdata");
             System.out.println(" (0) Quit the program");
             System.out.print("\n Choice:");
 
