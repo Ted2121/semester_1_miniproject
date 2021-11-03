@@ -245,7 +245,7 @@ public class MainMenu {
         return choice;
     }
 
-    // TODO finish the menu
+
     private void crudLPMenu(){
         boolean running = true;
         int choice = writeCrudLPMenu();
@@ -254,11 +254,18 @@ public class MainMenu {
                 case 1 -> lpController.createNewLPMenu();
                 case 2 -> lpCatalogDisplay();
                 case 3 -> changeLPInformationMenu();
-                case 4 -> mainMenu();
+                case 4 -> deleteLPMenu();
+                default ->{
+                    System.out.println("Invalid input");
+                    mainMenu();
+                }
+                }
 
             }
 
-
+    private void deleteLPMenu(){
+        findingLPMenu();
+        lpController.deleteLP(lpController.getLPByTitle(lpTitleToChange));
     }
 
     private void changeLPInformationMenu(){
@@ -325,15 +332,13 @@ public class MainMenu {
         return choice;
     }
 
-
-
     private void findingLPMenu() {
 
         try{
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter LP's title:");
             lpTitleToChange = scanner.nextLine();
-            System.out.println("TESTING " + lpTitleToChange);
+//            System.out.println("TESTING " + lpTitleToChange);
         } catch (InputMismatchException e){
             System.out.println("Invalid input");
         }
