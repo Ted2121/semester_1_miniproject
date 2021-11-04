@@ -15,20 +15,41 @@ public class TryMe {
 
     public TryMe(){
 
-        //LPController lpController = new LPController();
         lpController.addLP("Bohemian Rhapsody", "19.08.1986", "Queen", 76576);
-        lpController.addLP("Radio gaga", "11.05.1988", "Queen", 67578);
-        lpController.addLP("It's my life", "29.09.1976", "Bon Jovi", 34563);
-        lpController.addLP("Oceans", "20.05.2018", "CHarlotte Cardin", 34563);
-        lpController.addLP("Where did you sleep last night", "23.11.1992", "Nirvana" , 34563);
+        lpController.addLP("Radio gaga", "14.08.1983", "Queen", 67578);
+        lpController.addLP("It's my life", "19.08.1956", "Bon Jovi", 34563);
+        lpController.addLP("Oceans", "20.05.2018", "Charlotte Cardin", 49863);
+        lpController.addLP("Nocturne", "29.01.1833", "Chopin" , 37663);
 
-        //lpController.getInfo();
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 1, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 221, 2, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 222, 3, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 223, 4, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 224, 5, true);
 
-        lpController.addLPCopy("wtf", "19.08.1986", "Queen", 223, 1, true);
-        lpController.addLPCopy("test2", "19.08.1986", "Queen", 223, 2, true);
-        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 3, true);
-        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 221, 4, true);
-        lpController.addLPCopy("Radio gaga", "19.08.1986", "Queen", 224, 5, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 320, 6, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 321, 7, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 322, 8, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 323, 9, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 324, 10, true);
+
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 420, 11, true);
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 421, 12, true);
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 422, 13, true);
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 423, 14, true);
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 424, 15, true);
+
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 520, 16, true);
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 521, 17, true);
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 522, 18, true);
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 523, 19, true);
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 524, 20, true);
+
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 420, 21, true);
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 421, 22, true);
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 422, 23, true);
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 423, 24, true);
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 424, 25, true);
 
         personController.addPerson("Ted", "Letvadvej 3A", 9200, "Aalborg", 31896135);
         personController.addPerson("Andreea", "Vesterbro 11", 9000, "Aalborg", 43214325);
@@ -36,16 +57,5 @@ public class TryMe {
         personController.addPerson("Akos", "Parkvej 15", 9000, "Aalborg", 54365664);
         personController.addPerson("Vladdy", "Nibevej 14", 9200, "Aalborg", 97685767);
 
-
-
-        // successfull test for getFirstCopyAvailable method
-        // System.out.println(lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(), "test1"));
-
-
-//        lpController.addLP("It's my life", "19.08.1986", "Queen", 223);
-//        lpController.addLPCopy("It's my life", "19.08.1986", "Queen", 223, 1, true);
-//
-//        LPCopy lpCopy = new LPCopy("It's my life", "19.08.1986", "Queen", 223, 1, true);
-//        lpController.addLPCopy(lpCopy);
     }
 }

@@ -57,6 +57,7 @@ public class LoanController {
        return localDate;
     }
 
+    // this is where you can change the loan period - replace the 14
     public void setLoanLPCopyAndPerson(Loan loan, LPCopy lpCopy, Person person){
         loan.setPerson(person);
         loan.setLpCopy(lpCopy);

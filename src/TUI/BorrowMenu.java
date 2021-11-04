@@ -35,7 +35,6 @@ public class BorrowMenu {
                 case 1 -> {
                     int choice2 = lpCatalog();
 
-                    // TODO replace placeholder date
                     // this method call sets the LPCopy of the loan to the first
                     // LPCopy available that matches the title of the LP that
                     // the user chose by inputting an integer for choice2
@@ -44,7 +43,7 @@ public class BorrowMenu {
                             lpController.getFirstCopyAvail(lpController.getLpCopyContainer().getLpCopies(),
                                     lpController.getLPTitleToString((model.LP) lpController.getLPs().get(choice2 - 1))),
                             personController.getPersonByName(MainMenu.getPersonName()));
-                    System.out.println( "TEST" + lpController.getLPTitleToString((model.LP) lpController.getLPs().get(choice2 - 1)));
+                    System.out.println( "TEST HERE " + lpController.getLPTitleToString((model.LP) lpController.getLPs().get(choice2 - 1)));
 
                     System.out.println(loanController.getInfo(loanController.getLoan()));
                     id++;
