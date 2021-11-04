@@ -28,7 +28,6 @@ public class LPCopyContainer {
         return lpCopies;
     }
 
-    //TODO fix these
     // part of CRUD LPCopy
     public void addLPCopy(LPCopy lpCopy)
     {
@@ -54,13 +53,6 @@ public class LPCopyContainer {
     public void updateLPCopyPublicationDate(LPCopy lpCopy, String newPublicationDate){
         lpCopy.setPublicationDate(newPublicationDate);
     }
-
-
-
-//    public void getInfo(){
-//        // used lambda to print each LPCopy
-//        lpCopies.forEach(lpCopy -> System.out.println(lpCopy));
-//    }
 
     public void getInfo(){
         // used atomic number to be able to increment in lambda
@@ -94,7 +86,6 @@ public class LPCopyContainer {
         lpCopy.setSerialNumber(serialNumber);
     }
 
-
     public LPCopy getLPCopyBySerialNumber(int serialNumber) {
         LPCopy lpCopy = null;
         boolean found = false;
@@ -119,8 +110,4 @@ public class LPCopyContainer {
         return lpCopy;
     }
 
-    public int getLPCopySerialNumber(LPCopy lpCopy){
-       return lpCopy.getSerialNumber();
-
-    }
 }
