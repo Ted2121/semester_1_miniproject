@@ -12,7 +12,7 @@ public class MainMenu {
     private BorrowMenu borrowMenu;
     private ReturnMenu returnMenu;
     private LPController lpController;
-    private LoanController loanController;
+
     private PersonController personController;
     private static String personName;
     private static int personNumber;
@@ -29,7 +29,6 @@ public class MainMenu {
         borrowMenu = new BorrowMenu();
         returnMenu = new ReturnMenu();
         lpController = new LPController();
-        loanController = new LoanController();
         personController = new PersonController();
     }
 
