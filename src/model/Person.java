@@ -23,24 +23,12 @@ public class Person {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public int getPostalCode() {
-        return postalCode;
-    }
-
     public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
-    }
-
-    public String getCity() {
-        return city;
     }
 
     public void setCity(String city) {

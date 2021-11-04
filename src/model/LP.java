@@ -13,7 +13,6 @@ public class LP {
         this.publicationDate = publicationDate;
     }
 
-
     public void setBarcode(int barcode) {
         this.barcode = barcode;
     }
@@ -28,10 +27,6 @@ public class LP {
 
     public void setArtist(String artist) {
         this.artist = artist;
-    }
-
-    public String getPublicationDate() {
-        return publicationDate;
     }
 
     public void setPublicationDate(String publicationDate) {
