@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class PersonContainer {
 
@@ -24,6 +23,7 @@ public class PersonContainer {
     public void addPerson(Person person){
         persons.add(person);
     }
+
 
     // part of CRUD Person
     public void deletePerson(Person person) {
@@ -92,15 +92,5 @@ public class PersonContainer {
     public void updatePersonPhoneNumber(Person person, int phoneNumber){
         person.setPhoneNumber(phoneNumber);
     }
-
-    public ArrayList<Person> getPersons() {
-        return persons;
-    }
-
-    public void setPersons(ArrayList<Person> persons) {
-        this.persons = persons;
-    }
-
-
 
 }

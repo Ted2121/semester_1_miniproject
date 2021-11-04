@@ -133,17 +133,16 @@ public class MainMenu {
 
     private void crudPersonMenu(){
 
-//        boolean running = true;
         int choice = writeCrudPersonMenu();
 
             switch (choice) {
                 case 1 -> personController.createNewPersonText();
                 case 2 -> personController.getInfo();
                 case 3 -> changePersonalInformationMenu();
-                case 4 -> {
+                case 4 -> {findingPersonMenu();
+                    personController.deletePerson(personController.getPersonByName(personName));}
+                default -> mainMenu();
 
-                    mainMenu();
-                }
             }
 
 

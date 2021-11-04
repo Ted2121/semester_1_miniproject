@@ -140,4 +140,7 @@ return person;
         personContainer.updatePersonPhoneNumber(person, phoneNumber);
     }
 
+    public void deletePerson(Person person){
+        personContainer.deletePerson(person);
+    }
 }
