@@ -4,8 +4,6 @@ package controller;
 import model.Person;
 import model.PersonContainer;
 
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PersonController {
@@ -21,15 +19,6 @@ public class PersonController {
         personContainer.addPerson(person);
         return person;
     }
-
-    // TODO garbage?
-    // gets called after an LP is returned
-
-    // TODO garbage?
-    // for populating the containers
-//    public void addPerson(Person person) {
-//        personContainer.addPerson(person);
-//    }
 
     // this method will get a Person object from the method with the same name in model.PersonContainer
     // (searches for a Person object that matches the name argument)
@@ -150,16 +139,5 @@ return person;
     public void updatePersonPhoneNumber(Person person, int phoneNumber){
         personContainer.updatePersonPhoneNumber(person, phoneNumber);
     }
-
-    // part of CRUD Person
-    public void deletePerson(Person person){
-        personContainer.deletePerson(person);
-    }
-
-//    public Person searchAndRetrievePerson(String name){
-//
-//        person = getPersonByName(name);
-//        return person;
-//    }
 
 }
