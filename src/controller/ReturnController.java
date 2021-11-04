@@ -20,6 +20,7 @@ public class ReturnController {
         loans = loanContainer.getLoans();
     }
 
+    // gets called after an LP is returned
     public void closeLoan(Loan loan){
         loanContainer.deleteLoan(loan);
         System.out.println("LP return on: " + dateOfReturn);
@@ -46,23 +47,4 @@ public class ReturnController {
         return loanToReturn;
     }
 
-//    // this method finds and returns a Loan by the serial number of the LPCopy attached to it
-//    public Loan findLoanBySerialNumber(int serialNumber){
-//        Loan loanToReturn = null;
-//        boolean found = false;
-//        int i = 0;
-//        while (!found && i < loans.size()) {
-//            if (loans.get(i).getLpCopy().getSerialNumber() == serialNumber) {
-//                System.out.println("Test" + loans.get(i));
-//                loanToReturn = loans.get(i);
-//                found = true;
-//                return loanToReturn;
-//            } else {
-//                i++;
-//
-//            }
-//
-//        }
-//        return loanToReturn;
-//    }
 }
