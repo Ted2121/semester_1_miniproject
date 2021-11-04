@@ -5,6 +5,7 @@ package controller;
 import model.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class LoanController {
     private LoanContainer loanContainer;
@@ -80,5 +81,7 @@ public class LoanController {
         loanContainer.printLoans();
     }
 
-
+    public ArrayList getLoans(){
+      return loanContainer.getLoans();
+    }
 }

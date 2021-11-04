@@ -47,7 +47,7 @@ public class LoanContainer {
         return localDate;
     }
 
-    public ArrayList<Loan> getLoans() {
+    public ArrayList getLoans() {
         return loans;
     }
 

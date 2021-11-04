@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class MainMenu {
     private BorrowMenu borrowMenu;
+    private ReturnMenu returnMenu;
     private LPController lpController;
     private LoanController loanController;
     private PersonController personController;
@@ -26,6 +27,7 @@ public class MainMenu {
 
     public MainMenu() {
         borrowMenu = new BorrowMenu();
+        returnMenu = new ReturnMenu();
         lpController = new LPController();
         loanController = new LoanController();
         personController = new PersonController();
@@ -42,16 +44,15 @@ public class MainMenu {
             int choice = writeMainMenu();
             switch (choice) {
                 case 1 -> borrowMenu.start();
-                case 2 -> System.out.println("TBI");
+                case 2 -> returnMenu.start();
                 case 3 -> {borrowMenu.lpCatalog();
                         mainMenu();}
                 case 4 -> crudMenu1();
-                case 9 -> System.out.println(" Not implemented yet");
                 case 0 -> {
                     System.out.println(" Thank you and goodbye.");
                     running = false;
                 }
-                default -> System.out.println(" Unknown error occurred, choice = " + choice);
+                default -> System.out.println("Invalid input: " + choice);
             }
         }
     }
@@ -66,7 +67,6 @@ public class MainMenu {
             System.out.println(" (2) Return menu");
             System.out.println(" (3) LP Catalog");
             System.out.println(" (4) Modify"); // will access the CRUD menu
-            System.out.println(" (9) Generate testdata");
             System.out.println(" (0) Quit the program");
             System.out.print("\n Choice:");
 
@@ -380,7 +380,6 @@ public class MainMenu {
                 }
             }
 
-
     }
 
     private void deleteLPCopyMenu() {
@@ -570,5 +569,13 @@ public class MainMenu {
                 }
             }
         }
+    }
+
+    public static int getLpCopySerialNumberToChange() {
+        return lpCopySerialNumberToChange;
+    }
+
+    public static void setLpCopySerialNumberToChange(int lpCopySerialNumberToChange) {
+        MainMenu.lpCopySerialNumberToChange = lpCopySerialNumberToChange;
     }
 }

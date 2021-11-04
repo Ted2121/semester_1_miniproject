@@ -56,7 +56,6 @@ public class BorrowMenu {
                 default -> {System.err.println("Wrong input");
                             running = false;}
 
-                // TODO not finished i think
             }
         }
     }
@@ -69,7 +68,7 @@ public class BorrowMenu {
         System.out.println(" (1) Create loan");
         System.out.println(" (2) Show current loans");
         System.out.println(" (0) Back");
-        System.out.print("\n Choice:");
+
         return getIntegerFromUser();
     }
 
@@ -80,7 +79,7 @@ public class BorrowMenu {
     }
 
 
-    private int getIntegerFromUser(){
+    public int getIntegerFromUser(){
         int choice = 0;
         try{
             Scanner scanner = new Scanner(System.in);
