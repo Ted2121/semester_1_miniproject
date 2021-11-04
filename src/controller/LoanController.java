@@ -5,7 +5,6 @@ package controller;
 import model.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class LoanController {
     private LoanContainer loanContainer;

@@ -31,12 +31,6 @@ public class LPController {
 
     }
 
-    public LP addAndReturnLP(String title, String publicationDate, String artist, int barcode){
-        lp = new LP(title, publicationDate, artist, barcode);
-        lpContainer.addLP(lp);
-        return lp;
-    }
-
     public LPCopyContainer getLpCopyContainer() {
         return lpCopyContainer;
     }
@@ -104,18 +98,6 @@ public class LPController {
         String answer = scanner.next();
         return answer;
     }
-    // TODO garbage?
-    // for populating the containers
-//    public void addLPCopy(LPCopy lpCopy) {
-//        lpContainer.addLP(lpCopy);
-//    }
-
-
-    // TODO garbage?
-    // for populating the containers
-//    public void addLP(LP lp) {
-//        lpContainer.addLP(lp);
-//    }
 
     // getting info using closed architecture
     public void getLPInfo(){
@@ -130,11 +112,6 @@ public class LPController {
     public LPCopy getFirstCopyAvail(ArrayList lpCopies, String title){
        LPCopy copy =  lpCopyContainer.getFirstCopyAvail(lpCopies, title);
        return copy;
-    }
-
-    // accessing setState method of model.LPCopy through model.LPContainer - keeping a closed architecture
-    public void setLpCopyState(LPCopy lpCopy, boolean state){
-        lpCopyContainer.updateLPCopyState(lpCopy, state);
     }
 
     public ArrayList getLPs(){
@@ -271,7 +248,4 @@ public class LPController {
         return lpCopy;
     }
 
-    public int getLPCopySerialNumber(LPCopy lpCopy){
-       return lpCopyContainer.getLPCopySerialNumber(lpCopy);
-    }
 }
