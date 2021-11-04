@@ -43,7 +43,7 @@ public class ReturnMenu {
             switch (choice) {
                 case 1 -> {
                     setLPCopySerialNumber();
-                    returnController.closeLoan(returnController.findLoanBySerialNumber(lpController.getLPCopySerialNumber()));
+                    returnController.closeLoan(returnController.findLoanBySerialNumber(MainMenu.getLpCopySerialNumberToChange()));
 //                    System.err.println("Test");
 //                    System.out.println(loanController.getLoans());
                 }

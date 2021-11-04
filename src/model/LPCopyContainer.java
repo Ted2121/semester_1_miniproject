@@ -99,17 +99,22 @@ public class LPCopyContainer {
         LPCopy lpCopy = null;
         boolean found = false;
         int i = 0;
-        while (!found && i < lpCopies.size()) {
-            if (lpCopies.get(i).getSerialNumber() == serialNumber) {
-                System.out.println("Test" + lpCopies.get(i));
-                lpCopy = lpCopies.get(i);
-                found = true;
-                return lpCopy;
-            } else {
-                i++;
+        try {
+            while (!found && i < lpCopies.size()) {
+                if (lpCopies.get(i).getSerialNumber() == serialNumber) {
+                    //System.out.println("Test" + lpCopies.get(i));
+                    lpCopy = lpCopies.get(i);
+                    System.out.println("TEST " + lpCopy);
+                    found = true;
+                    return lpCopy;
+                } else {
+                    i++;
+
+                }
 
             }
-
+        }catch (NullPointerException e){
+            System.out.println("TEST " + lpCopy);
         }
         return lpCopy;
     }

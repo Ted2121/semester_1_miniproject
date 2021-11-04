@@ -271,7 +271,7 @@ public class LPController {
         return lpCopy;
     }
 
-    public int getLPCopySerialNumber(){
+    public int getLPCopySerialNumber(LPCopy lpCopy){
        return lpCopyContainer.getLPCopySerialNumber(lpCopy);
     }
 }
