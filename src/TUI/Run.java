@@ -1,8 +1,5 @@
 package TUI;
 
-
-import controller.LPController;
-
 public class Run {
     MainMenu mainMenu;
     TryMe tryMe;
@@ -14,8 +11,7 @@ public class Run {
     }
     public static void main(String[] args) {
 
-    Run run = new Run();
+    new Run().mainMenu.start();
 
-    run.mainMenu.start();
     }
 }

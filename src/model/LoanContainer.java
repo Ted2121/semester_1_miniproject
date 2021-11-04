@@ -19,10 +19,6 @@ public class LoanContainer {
         return instance;
     }
 
-    public void setBorrowDate(Loan loan, LocalDate localDate){
-        loan.setBorrowDate(localDate);
-    }
-
     // part of Loan use case - gets called whenever there is a new loan request
     public void createLoan(Loan loan)
     {
@@ -51,7 +47,4 @@ public class LoanContainer {
         return loans;
     }
 
-    public void setLoans(ArrayList<Loan> loans) {
-        this.loans = loans;
-    }
 }
