@@ -149,7 +149,7 @@ public class MainMenu {
     }
 
     private int writeChangePersonalInformationMenu(){
-       // findingPersonMenu();
+
     int choice = 0;
 
     try {

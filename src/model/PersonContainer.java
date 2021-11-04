@@ -24,7 +24,6 @@ public class PersonContainer {
         persons.add(person);
     }
 
-
     // part of CRUD Person
     public void deletePerson(Person person) {
         persons.remove(person);
