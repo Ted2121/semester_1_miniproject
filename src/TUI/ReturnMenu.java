@@ -21,7 +21,6 @@ public class ReturnMenu {
         returnController = new ReturnController();
     }
 
-
     public void start() {
 
         returnMenu();
@@ -44,8 +43,7 @@ public class ReturnMenu {
                 case 1 -> {
                     setLPCopySerialNumber();
                     returnController.closeLoan(returnController.findLoanBySerialNumber(MainMenu.getLpCopySerialNumberToChange()));
-//                    System.err.println("Test");
-//                    System.out.println(loanController.getLoans());
+
                 }
 
                 case 2 -> loanController.printLoans();
@@ -56,7 +54,6 @@ public class ReturnMenu {
             }
             }
         }
-
 
     // this method sets the static field of MainMenu lpCopySerialNumberToChange to the user's input
     private void setLPCopySerialNumber(){
