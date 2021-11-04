@@ -55,7 +55,7 @@ public class TryMe {
         personController.addPerson("Andreea", "Vesterbro 11", 9000, "Aalborg", 43214325);
         personController.addPerson("Rares", "Nibevej 12", 9000, "Aalborg", 42343255);
         personController.addPerson("Akos", "Parkvej 15", 9000, "Aalborg", 54365664);
-        personController.addPerson("Vladdy", "Nibevej 15", 9200, "Aalborg", 97685767);
+        personController.addPerson("Vladdy", "Nibevej 16", 9200, "Aalborg", 97685767);
 
     }
 }
