@@ -37,7 +37,6 @@ public class MainMenu {
         mainMenu();
     }
 
-    // TODO handle inputmismatch exception for all methods that use scanner
     private void mainMenu() {
         boolean running = true;
         while (running) {
@@ -57,7 +56,6 @@ public class MainMenu {
         }
     }
 
-    // TODO make sure all branches are implemented
     private int writeMainMenu() {
         int choice = 0;
        try {
@@ -98,7 +96,6 @@ public class MainMenu {
         }
         return choice;
     }
-
 
     private void crudMenu1(){
         boolean running = true;
@@ -225,8 +222,6 @@ public class MainMenu {
 
         }
 
-
-
     private int writeCrudLPMenu(){
 
         int choice = 0;
@@ -244,7 +239,6 @@ public class MainMenu {
         }
         return choice;
     }
-
 
     private void crudLPMenu(){
 
@@ -363,9 +357,7 @@ public class MainMenu {
         return choice;
     }
 
-    // TODO finish the menu
     private void crudLPCopyMenu(){
-
 
         int choice = writeCrudLPCOpyMenu();
 
@@ -394,7 +386,6 @@ public class MainMenu {
         String newPublicationDate = null;
         int newSerialNumber = 0;
         boolean newState = false;
-
 
         findingLPCopyMenu();
         lpController.setLpCopy(lpController.getLPCopyBySerialNumber(lpCopySerialNumberToChange));
@@ -466,7 +457,6 @@ public class MainMenu {
         return choice;
     }
 
-
     private void findingLPCopyMenu(){
         try{
             Scanner scanner = new Scanner(System.in);
@@ -489,7 +479,6 @@ public class MainMenu {
     public void lpCopyCatalogDisplay(){
         System.out.println("****** LP Copy Catalog ******");
         lpController.getLPCopyInfo();
-
     }
 
     private String inputPersonNameMenu(){
@@ -506,11 +495,6 @@ public class MainMenu {
         }
         return answer;
     }
-
-//    public String getNameFromInput(){
-//        String name = inputPersonNameMenu();
-//        return name;
-//    }
 
     private int inputPersonPhoneNumberMenu(){
         int answer = 0;
@@ -534,11 +518,6 @@ public class MainMenu {
         System.out.println(" (1) To find a person by name");
         System.out.println(" (2) To find a person by phone number");
         System.out.println(" (3) To go to the previous menu");
-
-//        while (!scanner.hasNextInt()) {
-//            System.out.println("Input must be a number - please try again");
-//            writeFindingPersonMenu();
-//        }
 
         choice = scanner.nextInt();
             return choice;

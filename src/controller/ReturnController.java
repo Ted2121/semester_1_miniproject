@@ -43,7 +43,7 @@ public class ReturnController {
             }
 
         }
-        //if (loanToReturn == null) System.out.println("Loan doesn't exist");
+
         return loanToReturn;
     }
 
