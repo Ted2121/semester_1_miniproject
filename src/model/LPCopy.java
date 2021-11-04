@@ -38,7 +38,7 @@ public class LPCopy extends LP{
 
         return super.toString() + "\n" +
                 "serial number: " + serialNumber + "\n" +
-                "state: " + availability + "\n" +
+                "state is now: " + availability + "\n" +
                 "----------------------------------------------";
     }
 }

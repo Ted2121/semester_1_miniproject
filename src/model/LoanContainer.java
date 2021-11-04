@@ -46,4 +46,12 @@ public class LoanContainer {
         LocalDate localDate = loan.getBorrowDate();
         return localDate;
     }
+
+    public ArrayList<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(ArrayList<Loan> loans) {
+        this.loans = loans;
+    }
 }

@@ -22,33 +22,33 @@ public class TryMe {
         lpController.addLP("Nocturne", "29.01.1833", "Chopin" , 37663);
 
         lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 220, 1, true);
-        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 221, 2, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 221, 2, false);
         lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 222, 3, true);
-        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 223, 4, true);
+        lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 223, 4, false);
         lpController.addLPCopy("Bohemian Rhapsody", "19.08.1986", "Queen", 224, 5, true);
 
-        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 320, 6, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 320, 6, false);
         lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 321, 7, true);
         lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 322, 8, true);
         lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 323, 9, true);
-        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 324, 10, true);
+        lpController.addLPCopy("Radio gaga", "14.08.1983", "Queen", 324, 10, false);
 
         lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 420, 11, true);
-        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 421, 12, true);
-        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 422, 13, true);
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 421, 12, false);
+        lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 422, 13, false);
         lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 423, 14, true);
         lpController.addLPCopy("It's my life", "12.03.1956", "Bon Jovi", 424, 15, true);
 
-        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 520, 16, true);
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 520, 16, false);
         lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 521, 17, true);
         lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 522, 18, true);
-        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 523, 19, true);
+        lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 523, 19, false);
         lpController.addLPCopy("Oceans", "20.05.2018", "Charlotte Cardin", 524, 20, true);
 
         lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 420, 21, true);
         lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 421, 22, true);
-        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 422, 23, true);
-        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 423, 24, true);
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 422, 23, false);
+        lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 423, 24, false);
         lpController.addLPCopy("Nocturne", "29.01.1833", "Chopin", 424, 25, true);
 
         personController.addPerson("Ted", "Letvadvej 3A", 9200, "Aalborg", 31896135);
