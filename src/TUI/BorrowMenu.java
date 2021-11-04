@@ -45,7 +45,9 @@ public class BorrowMenu {
                             personController.getPersonByName(MainMenu.getPersonName()));
                     System.out.println( "TEST HERE " + lpController.getLPTitleToString((model.LP) lpController.getLPs().get(choice2 - 1)));
 
+
                     System.out.println(loanController.getInfo(loanController.getLoan()));
+                    loanController.getLoan().getLpCopy().setState(false);
                     id++;
 
                 }
